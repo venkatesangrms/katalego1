@@ -87,9 +87,9 @@ spec:
         - mountPath: /var/tmp
           name: data
           subPath: var_tmp
-        - mountPath: /opt/oracle/diag/rdbms/orcl/orcl/trace
-          name: data
-          subPath: trace
+#        - mountPath: /opt/oracle/diag/rdbms/orcl/orcl/trace
+#          name: data
+#          subPath: trace
       - name: fluentd
         image: {{ .Values.image.LOGZIO }}
         env:
