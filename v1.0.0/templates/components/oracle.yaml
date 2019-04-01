@@ -87,9 +87,9 @@ spec:
         - mountPath: /var/tmp
           name: data
           subPath: var_tmp
-#        - mountPath: /opt/oracle/diag/rdbms/orcl/orcl/trace
-#          name: data
-#          subPath: trace
+        - mountPath: /opt/oracle/diag/rdbms/orcl/orcl/incident
+          name: data
+          subPath: incident
       - name: fluentd
         image: {{ .Values.image.LOGZIO }}
         env:
@@ -155,8 +155,8 @@ spec:
           mountPath: /fluentd/etc/fluent.conf
           subPath: fluent.conf
         - name: data
-          mountPath: /opt/oracle/diag/rdbms/orcl/orcl/trace
-          subPath: trace
+          mountPath: /opt/oracle/diag/rdbms/orcl/orcl/incident
+          subPath: incident
       imagePullSecrets:
       - name: container-registry-key
       securityContext:
