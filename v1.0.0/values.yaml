@@ -18,7 +18,7 @@ image:
   ELASTICSEARCH_LOGGING: k8s.gcr.io/elasticsearch:v6.3.0
   LOGSTASH: metricstream/images:e13s-logstash-6.4.3
   TD_AGENT: metricstream/images:e13s-td-agent-2.0.0
-  LOGZIO: logzio/logzio-k8s:1.0.3
+  LOGZIO: fluent/fluentd:v1.4.2-1.0
 logzio:
   cpu: 100
   memory: 400
