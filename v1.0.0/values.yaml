@@ -24,18 +24,8 @@ logzio:
   cpu: 100
   memory: 400
 logger:
-  type: elasticsearch
-  id: elasticsearch
   cpu: 100
   memory: 400
-  fluentd:
-    url: host "#{ENV['LOGGER_URL']}"
-    port: port "#{ENV['PORT']}"
-    index_name: index_name ${tag}
-  logzio:
-    url: endpoint_url "#{ENV['LOGZIO_URL']}?token=#{ENV['LOGZIO_TOKEN']}"
-    include_time: output_include_time true
-    include_tags: output_include_tags true 
 resourceUnit:
   small:
     storage:

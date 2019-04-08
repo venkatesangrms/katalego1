@@ -142,18 +142,18 @@ spec:
         securityContext:
           readOnlyRootFilesystem: true
       - name: fluentd
-        image: {{ .Values.image.LOGZIO }}
+        image: {{ .Values.image.LOGGER }}
         env:
-        - name:  LOGZIO_TOKEN
+        - name:  LOGGER_TOKEN
           valueFrom:
             secretKeyRef:
-              name: logzio-token-secret
-              key: logzio-url
-        - name:  LOGZIO_URL
+              name: logger-token-secret
+              key: logger-url
+        - name:  LOGGER_URL
           valueFrom:
             secretKeyRef:
-              name: logzio-token-secret
-              key: logzio-token
+              name: logger-token-secret
+              key: logger-token
         - name: NODE_NAME
           valueFrom:
             fieldRef:
