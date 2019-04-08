@@ -94,10 +94,7 @@ spec:
               name: logger-token-secret
               key: logger-token
         - name: LOGGER_PORT
-          valueFrom:
-            secretKeyRef:
-              name: logger-port-secret
-              key: logger-port
+          value: {{ .Values.logger.port }}
         - name: NODE_NAME
           valueFrom:
             fieldRef:
