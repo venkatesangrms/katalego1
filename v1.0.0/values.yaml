@@ -19,9 +19,23 @@ image:
   LOGSTASH: metricstream/images:e13s-logstash-6.4.3
   TD_AGENT: metricstream/images:e13s-td-agent-2.0.0
   LOGZIO: metricstream/images:e13s-fluentd-1.4.2
+  LOGGER: metricstream/images:e13s-fluentd-1.4.2
 logzio:
   cpu: 100
   memory: 400
+logger:
+  type: elasticsearch
+  id: elasticsearch
+  cpu: 100
+  memory: 400
+  fluentd:
+    url: host "#{ENV['LOGGER_URL']}"
+    port: port "#{ENV['PORT']}"
+    index_name: index_name ${tag}
+  logzio:
+    url: endpoint_url "#{ENV['LOGZIO_URL']}?token=#{ENV['LOGZIO_TOKEN']}"
+    include_time: output_include_time true
+    include_tags: output_include_tags true 
 resourceUnit:
   small:
     storage:
