@@ -87,12 +87,12 @@ spec:
           valueFrom:
             secretKeyRef:
               name: logger-token-secret
-              key: logger-url
+              key: logger-token
         - name:  LOGGER_URL
           valueFrom:
             secretKeyRef:
-              name: logger-token-secret
-              key: logger-token
+              name: logger-url-secret
+              key: logger-url
         - name: LOGGER_PORT
           value: '{{ .Values.logger.port }}'
         - name: NODE_NAME
