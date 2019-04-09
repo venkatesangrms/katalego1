@@ -5,5 +5,9 @@ metadata:
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
 data:
-  fluent.conf: |-
-    {{ .Files.Get "config/activemq/*" | nindent 4 }}
+  log4j.properties: |-
+    {{ .Files.Get "config/activemq/log4j.properties" | nindent 4 }}
+  jetty.xml: |-
+    {{ .Files.Get "config/activemq/jetty.xml" | nindent 4 }}
+  activemq.xml: |-
+    {{ .Files.Get "config/activemq/activemq.xml" | nindent 4 }}
