@@ -4,8 +4,9 @@ metadata:
   name: activemq-config
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
-data:
-  log4j.properties: |
-    {{ .Files.Get "config/activemq/log4j.properties" | nindent 4 }}
-  jetty.xml: |
-    {{ .Files.Get "config/activemq/jetty.xml" | nindent 4 }}
+data:i
+  {{- $root := . }}
+  {{- range $path, $bytes := .Files.Glob "config/activemq/*.*" }}
+  {{ base $path }}: |-
+  {{- $root.Files.Get $path | nindent 4 }}
+  {{- end }}
