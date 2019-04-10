@@ -4,7 +4,7 @@ metadata:
   name: activemq-config
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
-data:i
+data:
   {{- $root := . }}
   {{- range $path, $bytes := .Files.Glob "config/activemq/*.*" }}
   {{ base $path }}: |-
