@@ -94,13 +94,16 @@ spec:
           name: data
         - mountPath: /opt/MetricStream/SYSTEMi/Systemi/keys
           name: keys
-        - mountPath: /tomcat/conf
+        - mountPath: /data/metricstream
+          name: data
+          subPath: ms_data
+        - mountPath: /usr/local/tomcat/conf
           name: data
           subPath: conf
-        - mountPath: /tomcat/logs
+        - mountPath: /usr/local/tomcat/logs
           name: data
           subPath: logs
-        - mountPath: /tomcat/work
+        - mountPath: /usr/local/tomcat/work
           name: data
           subPath: work
         - mountPath: /tmp
