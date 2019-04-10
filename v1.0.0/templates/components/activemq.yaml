@@ -68,13 +68,13 @@ spec:
           subPath: activemq
         - mountPath: /opt/activemq/conf/log4j.properties
           name: activemq-config
-          subPath: conf/log4j.properties
+          subPath: log4j.properties
         - mountPath: /opt/activemq/conf/jetty.xml
           name: activemq-config
-          subPath: conf/jetty.xml
+          subPath: jetty.xml
         - mountPath: /opt/activemq/conf/activemq.xml
           name: activemq-config
-          subPath: conf/activemq.xml
+          subPath: activemq.xml
         - mountPath: /opt/activemq/tmp
           name: data
           subPath: activemq_tmp
