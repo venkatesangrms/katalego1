@@ -5,5 +5,5 @@ metadata:
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
 data:
-  jetty: |-
-    {{ .Files.Get "config/activemq/jetty.xml" | indent 4 }}
+  jetty: |
+{{.Files.Get "config/activemq/jetty.xml" | printf "%s" | indent 4 }}
