@@ -114,34 +114,6 @@ spec:
           subPath: tomcat_tmp
         securityContext:
           readOnlyRootFilesystem: true
-      - name: libreoffice
-        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIBREOFFICE }}
-        imagePullPolicy: IfNotPresent
-        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
-        resources:
-          limits:
-            memory: {{ .memory.max.LIBREOFFICE }}Mi
-            cpu: {{ .cpu.max.LIBREOFFICE }}m
-          requests:
-            memory: {{ .memory.max.LIBREOFFICE }}Mi
-            cpu: {{ .cpu.max.LIBREOFFICE }}m
-        {{- end }}
-        ports:
-        - name: libreoffice
-          containerPort: 8997
-        volumeMounts:
-        - mountPath: /opt/MetricStream/SYSTEMi
-          subPath: SYSTEMi
-          name: data
-        - mountPath: /opt/libreoffice
-          subPath: libre_home
-          name: data
-        - mountPath: /tmp
-          subPath: libre_tmp
-          name: data
-        - mountPath: /var/tmp
-          subPath: libre_var_tmp
-          name: data
         securityContext:
           readOnlyRootFilesystem: true
       imagePullSecrets:
