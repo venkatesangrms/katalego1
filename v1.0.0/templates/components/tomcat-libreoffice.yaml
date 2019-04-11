@@ -56,6 +56,9 @@ spec:
       - name: fluentd-config
         configMap:
           name: tomcat-fluentd-config
+      - name: tomcat-config
+        configMap:
+          name: tomcat-config
       containers:
       - name: tomcat
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.TOMCAT }}
@@ -97,9 +100,18 @@ spec:
         - mountPath: /data/metricstream
           name: data
           subPath: ms_data
-        - mountPath: /usr/local/tomcat/conf
-          name: data
-          subPath: conf
+        - mountPath: /usr/local/tomcat/conf/context.xml
+          name: tomcat-config
+          subPath: context.xml
+        - mountPath: /usr/local/tomcat/conf/server.xml
+          name: tomcat-config
+          subPath: server.xml
+        - mountPath: /usr/local/tomcat/conf/logging.properties
+          name: tomcat-config
+          subPath: logging.properties
+        - mountPath: /usr/local/tomcat/conf/web.xml
+          name: tomcat-config
+          subPath: web.xml
         - mountPath: /usr/local/tomcat/logs
           name: data
           subPath: logs
@@ -206,7 +218,7 @@ spec:
           mountPath: /fluentd/etc/fluent.conf
           subPath: fluent.conf
         - name: data
-          mountPath: /tomcat/logs
+          mountPath: /usr/local/tomcat/logs
           subPath: logs
         - name: data
           mountPath: /opt/MetricStream/SYSTEMi/Systemi/log
