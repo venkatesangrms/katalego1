@@ -73,7 +73,7 @@ spec:
               name: resource-config
               key: TOMCAT_JAVA_XMX
         - name: CLASSPATH
-          value: "/etc/local/tomcat/bin/bootstrap.jar:/etc/local/tomcat/bin/tomcat-juli.jar"
+          value: "/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar"
         ports:
         - name: tomcat
           containerPort: 8080
