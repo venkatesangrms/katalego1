@@ -26,18 +26,18 @@
                resourceName="UserDatabase"/>
       </Realm>
       -->
-      <Host name="localhost"  appBase="/opt/MetricStream/SYSTEMi/Systemi/webapp" unpackWARs="true" autoDeploy="true">
+      <Host name="localhost"  appBase="/opt/metricstream/SYSTEMi/Systemi/webapp" unpackWARs="true" autoDeploy="true">
         <!--
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
         -->
-        <Context path="/metricstream"  docBase="/opt/MetricStream/SYSTEMi/Systemi/webapp" />
-        <Context path="/" docBase="/opt/MetricStream/SYSTEMi/Systemi/Resource/Html/" />
-        <Context path="/ui" docBase="/opt/MetricStream/SYSTEMi/Systemi/Resource/Html/ui" >
+        <Context path="/metricstream"  docBase="/opt/metricstream/SYSTEMi/Systemi/webapp" />
+        <Context path="/" docBase="/opt/metricstream/SYSTEMi/Systemi/Resource/Html/" />
+        <Context path="/ui" docBase="/opt/metricstream/SYSTEMi/Systemi/Resource/Html/ui" >
             <Valve className="org.apache.catalina.valves.rewrite.RewriteValve" />
         </Context>
-        <Context path="/si_image" docBase="/opt/MetricStream/SYSTEMi/Systemi/Resource/images" />
+        <Context path="/si_image" docBase="/opt/metricstream/SYSTEMi/Systemi/Resource/images" />
 
 
       </Host>
