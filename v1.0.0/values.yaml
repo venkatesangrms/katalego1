@@ -12,7 +12,7 @@ image:
   MONGO: metricstream/images:e13s-mongodb-2.6.12
   ORACLE: metricstream/images:e13s-oracle-12.2.0.1
   MAINTENANCE: metricstream/images:e13s-maintenance-1.0.0
-  INSTANCE_RESTORE_UPGRADE: metricstream/images:k8s-instance-restore-m7ri-M7-OCT18-U2-12c2_1
+  INSTANCE_RESTORE_UPGRADE: metricstream/images:k8s-instance-restore-m7ri-M7-OCT18-U2-12c2
   KIBANA: docker.elastic.co/kibana/kibana-oss:6.3.2
   FLUENTD: k8s.gcr.io/fluentd-elasticsearch:v2.2.0
   ELASTICSEARCH_LOGGING: k8s.gcr.io/elasticsearch:v6.3.0
