@@ -77,7 +77,7 @@ spec:
         securityContext:
           readOnlyRootFilesystem: true
         ports:
-        - name: elasticsearch-port
+        - name: elastic-port
           containerPort: 9300
       - name: fluentd-container
         image: {{ .Values.image.LOGZIO }}
