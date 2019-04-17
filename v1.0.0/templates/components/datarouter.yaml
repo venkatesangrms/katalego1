@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: datarouter-deployment
+  name: datarouter
 spec:
   replicas: 0
   selector:

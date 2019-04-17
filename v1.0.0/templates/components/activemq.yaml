@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: activemq-service
+  name: activemq
 spec:
   ports:
     - name: activemq-service-port
@@ -9,12 +9,12 @@ spec:
       port: 61616
       targetPort: 61616
   selector:
-    app: activemq-deployment
+    app: activemq
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: activemq-deployment
+  name: activemq
 spec:
   replicas: 0
   selector:

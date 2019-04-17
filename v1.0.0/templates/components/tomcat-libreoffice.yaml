@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: tomcat-service
+  name: tomcat
 spec:
   ports:
     - name: tomcat-service-port
@@ -9,7 +9,7 @@ spec:
       port: 80
       targetPort: 8080
   selector:
-    app: tomcat-deployment
+    app: tomcat
   {{- if (eq "GKE" .Values.cloudService.provider) }}
   type: NodePort
   {{- end }}
@@ -17,7 +17,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tomcat-jmx-service
+  name: tomcat-jmx
 spec:
   ports:
     - name: tomcat-jmx-service-port
@@ -25,12 +25,12 @@ spec:
       port: 8888
       targetPort: 8888
   selector:
-    app: tomcat-deployment
+    app: tomcat
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tomcat-deployment
+  name: tomcat
 spec:
   replicas: 0
   selector:
