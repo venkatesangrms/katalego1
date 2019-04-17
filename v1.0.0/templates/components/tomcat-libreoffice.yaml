@@ -78,7 +78,7 @@ spec:
         - name: CLASSPATH
           value: "/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar"
         ports:
-        - name: tomcat-container-port
+        - name: tomcat-port
           containerPort: 8080
         - name: tomcat-container-jmx-port
           containerPort: 8888
