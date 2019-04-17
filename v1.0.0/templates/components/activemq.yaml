@@ -45,7 +45,7 @@ spec:
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ACTIVEMQ }}
         imagePullPolicy: IfNotPresent
         ports:
-        - name: activemq-container-port
+        - name: activemq-port
           containerPort: 61616
         env:
         - name: ACTIVEMQ_MAX_MEM
