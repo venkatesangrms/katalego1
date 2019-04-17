@@ -8,5 +8,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: tomcat-service
+          serviceName: tomcat
           servicePort: 80
