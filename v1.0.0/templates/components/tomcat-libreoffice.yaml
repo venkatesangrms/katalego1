@@ -141,16 +141,16 @@ spec:
         volumeMounts:
         - mountPath: /opt/metricstream/SYSTEMi
           subPath: SYSTEMi
-          name: data
+          name: tomcat-data-volume
         - mountPath: /opt/libreoffice
           subPath: libre_home
-          name: data
+          name: tomcat-data-volume
         - mountPath: /tmp
           subPath: libre_tmp
-          name: data
+          name: tomcat-data-volume
         - mountPath: /var/tmp
           subPath: libre_var_tmp
-          name: data
+          name: tomcat-data-volume
         securityContext:
           readOnlyRootFilesystem: true
       - name: fluentd
@@ -217,10 +217,10 @@ spec:
         - name: tomcat-fluentd-config-volume
           mountPath: /fluentd/etc/fluent.conf
           subPath: fluent.conf
-        - name: data
+        - name: tomcat-data-volume
           mountPath: /usr/local/tomcat/logs
           subPath: logs
-        - name: data
+        - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           subPath: SYSTEMi/Systemi/log
       imagePullSecrets:
