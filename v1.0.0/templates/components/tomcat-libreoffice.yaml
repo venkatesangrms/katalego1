@@ -140,7 +140,7 @@ spec:
           containerPort: 8997
         volumeMounts:
         - mountPath: /opt/metricstream/SYSTEMi
-#          subPath: SYSTEMi
+          subPath: SYSTEMi
           name: tomcat-data-volume
         - mountPath: /opt/libreoffice
 #          subPath: libre_home
@@ -219,10 +219,10 @@ spec:
           subPath: fluent.conf
         - name: tomcat-data-volume
           mountPath: /usr/local/tomcat/logs
-#          subPath: logs
+          subPath: tomcat-logs
         - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
-#          subPath: SYSTEMi/Systemi/log
+          subPath: system-logs
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
