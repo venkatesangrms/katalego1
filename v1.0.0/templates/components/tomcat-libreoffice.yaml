@@ -120,7 +120,7 @@ spec:
 #          subPath: work
         - mountPath: /tmp
           name: tomcat-data-volume
-          subPath: tomcat_tmp
+#          subPath: tomcat_tmp
         securityContext:
           readOnlyRootFilesystem: true
       - name: libreoffice-container
@@ -140,16 +140,16 @@ spec:
           containerPort: 8997
         volumeMounts:
         - mountPath: /opt/metricstream/SYSTEMi
-          subPath: SYSTEMi
+#          subPath: SYSTEMi
           name: tomcat-data-volume
         - mountPath: /opt/libreoffice
-          subPath: libre_home
+#          subPath: libre_home
           name: tomcat-data-volume
         - mountPath: /tmp
-          subPath: libre_tmp
+#          subPath: libre_tmp
           name: tomcat-data-volume
         - mountPath: /var/tmp
-          subPath: libre_var_tmp
+#          subPath: libre_var_tmp
           name: tomcat-data-volume
         securityContext:
           readOnlyRootFilesystem: true
@@ -219,10 +219,10 @@ spec:
           subPath: fluent.conf
         - name: tomcat-data-volume
           mountPath: /usr/local/tomcat/logs
-          subPath: logs
+#          subPath: logs
         - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
-          subPath: SYSTEMi/Systemi/log
+#          subPath: SYSTEMi/Systemi/log
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
