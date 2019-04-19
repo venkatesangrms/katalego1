@@ -39,11 +39,11 @@ index.number_of_replicas: 0
 #
 # Path to directory where to store the data (separate multiple locations by comma):
 #
-path.data: CELASTICSEARCH_DATA_PATH
+path.data: /usr/share/elasticsearch/data
 #
 # Path to temporary files:
 #
-path.work: CELASTICSEARCH_WORK_PATH
+path.work: /usr/share/elasticsearch/work
 #
 # Path to log files:
 #
@@ -64,11 +64,11 @@ path.logs: /usr/share/elasticsearch/logs
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-network.host: CELASTICSEARCH_NETWORK_HOST
+network.host: 0.0.0.0
 #
 # Set a custom port for the node to node communication (9300 by default):
 #
-transport.tcp.port: CELASTICSEARCH_TCP_PORT
+transport.tcp.port: 9300
 #
 # Set a custom port for HTTP:
 #
