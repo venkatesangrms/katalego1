@@ -47,7 +47,7 @@ path.work: CELASTICSEARCH_WORK_PATH
 #
 # Path to log files:
 #
-path.logs: CELASTICSEARCH_LOGS_PATH
+path.logs: /usr/share/elasticsearch/logs
 #
 # ----------------------------------- Memory -----------------------------------
 #
