@@ -25,7 +25,7 @@ spec:
       port: 8888
       targetPort: 8888
   selector:
-    app: tomcat
+    app: tomcat-deployment
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -99,7 +99,7 @@ spec:
           name: metricstream-license-keys-volume
         - mountPath: /data/metricstream
           name: tomcat-data-volume
-#          subPath: ms_data
+          subPath: ms_data
         - mountPath: /usr/local/tomcat/conf/context.xml
           name: tomcat-configuration-volume
           subPath: context.xml
@@ -117,10 +117,10 @@ spec:
           subPath: logs
         - mountPath: /usr/local/tomcat/work
           name: tomcat-data-volume
-#          subPath: work
+          subPath: work
         - mountPath: /tmp
           name: tomcat-data-volume
-#          subPath: tomcat_tmp
+          subPath: tomcat_tmp
         securityContext:
           readOnlyRootFilesystem: true
       - name: libreoffice-container
@@ -143,13 +143,13 @@ spec:
           subPath: SYSTEMi
           name: tomcat-data-volume
         - mountPath: /opt/libreoffice
-#          subPath: libre_home
+          subPath: libre_home
           name: tomcat-data-volume
         - mountPath: /tmp
-#          subPath: libre_tmp
+          subPath: libre_tmp
           name: tomcat-data-volume
         - mountPath: /var/tmp
-#          subPath: libre_var_tmp
+          subPath: libre_var_tmp
           name: tomcat-data-volume
         securityContext:
           readOnlyRootFilesystem: true
@@ -219,10 +219,10 @@ spec:
           subPath: fluent.conf
         - name: tomcat-data-volume
           mountPath: /usr/local/tomcat/logs
-          subPath: tomcat-logs
+          subPath: logs
         - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
-          subPath: system-logs
+          subPath: SYSTEMi/Systemi/log
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:

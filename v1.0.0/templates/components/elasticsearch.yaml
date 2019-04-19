@@ -37,6 +37,9 @@ spec:
       - name: elasticsearch-fluentd-config-volume
         configMap:
           name: elasticsearch-fluentd-configmap
+      - name: elasticsearch-configuration-configmap-volume
+        configMap:
+          name: elasticsearch-configuration-configmap
       containers:
       - name: elasticsearch-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ELASTICSEARCH }}
@@ -63,11 +66,11 @@ spec:
           name: elasticsearch-data-volume
           subPath: data
         - mountPath: /usr/share/elasticsearch/config/logging.yml
-          name: elasticsearch-data-volume
-          subPath: conf/logging.yml
+          name: elasticsearch-configuration-configmap-volume
+          subPath: logging.yml
         - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
-          name: elasticsearch-data-volume
-          subPath: conf/elasticsearch.yml
+          name: elasticsearch-configuration-configmap-volume
+          subPath: elasticsearch.yml
         - mountPath: /usr/share/elasticsearch/logs
           name: elasticsearch-data-volume
           subPath: logs

@@ -24,6 +24,9 @@ spec:
       - name: datarouter-fluentd-config-volume
         configMap:
           name: datarouter-fluentd-configmap
+      - name: datarouter-configuration-configmap-volume
+        configMap:
+          name: datarouter-configuration-configmap
       containers:
       - name: datarouter-container
         image: {{required "Data Router Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.DATAROUTER }}
@@ -45,13 +48,13 @@ spec:
         {{- end }}
         volumeMounts:
         - mountPath: /opt/datarouter/datarouter.properties
-          name: datarouter-data-volume
+          name: datarouter-configuration-configmap-volume
           subPath: datarouter.properties
         - mountPath: /opt/datarouter/log4j.properties
-          name: datarouter-data-volume
+          name: datarouter-configuration-configmap-volume
           subPath: log4j.properties
         - mountPath: /opt/datarouter/smc_instrumentation.json
-          name: datarouter-data-volume
+          name: datarouter-configuration-configmap-volume
           subPath: smc_instrumentation.json
         - mountPath: /opt/datarouter/logs
           name: datarouter-data-volume
