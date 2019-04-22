@@ -59,6 +59,9 @@ spec:
       - name: tomcat-configuration-volume
         configMap:
           name: tomcat-configuration-configmap
+      - name: systemi-configuration-volume
+        configMap:
+          name: systemi-configuration-configmap
       containers:
       - name: tomcat-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.TOMCAT }}
@@ -97,6 +100,10 @@ spec:
           name: tomcat-data-volume
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/Config/config.client.xml
+          name: systemi-configuration-volume
+        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
+          name: systemi-configuration-volume
         - mountPath: /data/metricstream
           name: tomcat-data-volume
           subPath: ms_data
