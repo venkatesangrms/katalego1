@@ -124,18 +124,18 @@ spec:
         - mountPath: /data/metricstream
           name: tomcat-data-volume
           subPath: ms_data
-        - mountPath: /usr/local/tomcat/conf/context.xml
+        - mountPath: /usr/local/tomcat/conf
           name: tomcat-configuration-volume
-          subPath: context.xml
-        - mountPath: /usr/local/tomcat/conf/server.xml
-          name: tomcat-configuration-volume
-          subPath: server.xml
-        - mountPath: /usr/local/tomcat/conf/logging.properties
-          name: tomcat-configuration-volume
-          subPath: logging.properties
-        - mountPath: /usr/local/tomcat/conf/web.xml
-          name: tomcat-configuration-volume
-          subPath: web.xml
+#          subPath: context.xml
+#        - mountPath: /usr/local/tomcat/conf/server.xml
+#          name: tomcat-configuration-volume
+#          subPath: server.xml
+#        - mountPath: /usr/local/tomcat/conf/logging.properties
+#          name: tomcat-configuration-volume
+#          subPath: logging.properties
+#        - mountPath: /usr/local/tomcat/conf/web.xml
+#          name: tomcat-configuration-volume
+#          subPath: web.xml
         - mountPath: /usr/local/tomcat/logs
           name: tomcat-data-volume
           subPath: logs
