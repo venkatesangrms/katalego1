@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MODULE SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/Doc/Module.dtd" [
   <!ENTITY license SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/keys/MetricStream_license.xml">
-  <!ENTITY hostname "citi2.k8s.metricstream.com">
+  <!ENTITY hostname "{{ .Release.Namespace }}.k8s.metricstream.com">
   <!ENTITY webserverport "80">
   <!ENTITY workflowhostname "127.0.0.1">
   <!ENTITY webserviceport "8268">
