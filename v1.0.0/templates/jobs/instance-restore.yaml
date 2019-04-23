@@ -35,7 +35,7 @@ spec:
         - {{ .Release.Namespace }}
         - k8s.metricstream.com
         volumeMounts:
-        - mountPath: /opt/MetricStream/SYSTEMi
+        - mountPath: /opt/metricstream/SYSTEMi
           subPath: SYSTEMi
           name: tomcat
         - mountPath: /tomcat-configuration-configmap
