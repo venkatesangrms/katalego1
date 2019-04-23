@@ -106,6 +106,21 @@ spec:
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
           name: systemi-configuration-volume
           subPath: kma.ini
+        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMP/conf/kmp.ini
+          name: systemi-configuration-volume
+          subPath: kmp.ini
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/conf/mongodb.properties
+          name: systemi-configuration-volume
+          subPath: mongodb.properties
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/shiro.ini
+          name: systemi-configuration-volume
+          subPath: shiro.ini
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/web.xml
+          name: systemi-configuration-volume
+          subPath: web.xml
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/Config/cif/cif_jndi.properties
+          name: systemi-configuration-volume
+          subPath: cif_jndi.properties
         - mountPath: /data/metricstream
           name: tomcat-data-volume
           subPath: ms_data
