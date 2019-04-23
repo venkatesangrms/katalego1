@@ -5,11 +5,8 @@ metadata:
   labels:
     addonmanager.kubernetes.io/mode: Reconcile
 data:
-  context.xml: |- 
-    {{.Files.Get "config/tomcat/context.xml" | nindent 4 }}
-  server.xml: |-
-    {{.Files.Get "config/tomcat/server.xml" | nindent 4 }}
-  logging.properties: |-
-    {{.Files.Get "config/tomcat/logging.properties" | nindent 4 }}
-  web.xml: |-
-    {{.Files.Get "config/tomcat/web.xml" | nindent 4 }}
+{{- $root := . }}
+{{- range $path, $bytes := .Files.Glob "config/tomcat/*" }}
+{{- base $path | nindent 2 }}: |-
+{{- $root.Files.Get $path | nindent 4}}
+{{- end }}

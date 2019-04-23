@@ -121,6 +121,9 @@ spec:
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/Config/cif/cif_jndi.properties
           name: systemi-configuration-volume
           subPath: cif_jndi.properties
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/Resource/Html/ui/WEB-INF/rewrite.config
+          name: systemi-configuration-volume
+          subPath: rewrite.config
         - mountPath: /data/metricstream
           name: tomcat-data-volume
           subPath: ms_data
