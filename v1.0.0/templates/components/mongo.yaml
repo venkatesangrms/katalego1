@@ -67,8 +67,8 @@ spec:
           name: mongodb-data-volume
           subPath: mongodb
         securityContext:
-          runAsUser: 1000
-          fsGroup: 1000
+#          runAsUser: 999
+#          fsGroup: 999
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
         ports:
