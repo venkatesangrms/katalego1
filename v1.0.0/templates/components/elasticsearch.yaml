@@ -67,10 +67,10 @@ spec:
           subPath: data
         - mountPath: /usr/share/elasticsearch/config/logging.yml
           name: elasticsearch-configuration-configmap-volume
-          subPath: conf/logging.yml
+          subPath: logging.yml
         - mountPath: /usr/share/elasticsearch/config/elasticsearch.yml
           name: elasticsearch-configuration-configmap-volume
-          subPath: conf/elasticsearch.yml
+          subPath: elasticsearch.yml
         - mountPath: /usr/share/elasticsearch/logs
           name: elasticsearch-data-volume
           subPath: logs

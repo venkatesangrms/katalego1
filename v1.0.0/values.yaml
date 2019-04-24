@@ -4,7 +4,7 @@ application:
   upgrade:
     location: {INSTANCE_DOWNLOAD_URL}
 image:
-  TOMCAT: metricstream/images:e13s-tomcat-9.0.10
+  TOMCAT: metricstream/images:e13s-tomcat-9.0.17-alpine-jre8
   DATAROUTER: metricstream/images:e13s-datarouter-2.17.7-alpine-jre8
   ACTIVEMQ: metricstream/images:e13s-activemq-5.14.5-alpine-jre8
   ELASTICSEARCH: metricstream/images:e13s-elasticsearch-2.4.1-alpine-jre8
