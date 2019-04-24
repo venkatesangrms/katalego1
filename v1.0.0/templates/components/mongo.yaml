@@ -66,11 +66,11 @@ spec:
         - mountPath: /var/log/mongodb
           name: mongodb-data-volume
           subPath: mongodb
-        securityContext:
+#        securityContext:
 #          runAsUser: 999
 #          fsGroup: 999
-          allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
+#          allowPrivilegeEscalation: false
+#          readOnlyRootFilesystem: true
         ports:
         - name: mongodb-port
           containerPort: 27017
