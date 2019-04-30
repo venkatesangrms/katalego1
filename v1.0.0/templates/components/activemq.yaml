@@ -81,6 +81,9 @@ spec:
         - mountPath: /tmp
           name: activemq-data-volume
           subPath: tmp
+        - mountPath: /opt/activemq/bin/linux-x86-64
+          name: activemq-data-volume
+          subPath: linux-x86-64
         securityContext:
           readOnlyRootFilesystem: true
       - name: fluentd-container
