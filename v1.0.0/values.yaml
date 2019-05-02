@@ -8,7 +8,7 @@ image:
   LIBREOFFICE: metricstreaminc/libreoffice:6.1.4.2-alpine-jre8u212-b03
   MONGO: metricstreaminc/mongodb:4.1.10-bionic
   ORACLE: metricstreaminc/oracle:12.2.0.1-ee
-  INSTANCE_RESTORE_UPGRADE: metricstreaminc/systemi-oracle-data:7.19.2
+  INSTANCE_RESTORE_UPGRADE: metricstreaminc/systemi-oracle-data:7.19.2-12c2
   LOGSTASH: metricstreaminc/logstash:7.0.0-ojdbc6
   LOGZIO: logzio/logzio-k8s:1.0.3
 logzio:
