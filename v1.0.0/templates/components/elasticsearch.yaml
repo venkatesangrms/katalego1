@@ -59,9 +59,6 @@ spec:
             cpu: {{ .cpu.max.ELASTICSEARCH }}m
         {{- end }}
         volumeMounts:
-        - mountPath: /data/elasticsearch
-          name: elasticsearch-data-volume
-          subPath: elasticsearch
         - mountPath: /usr/share/elasticsearch/data
           name: elasticsearch-data-volume
           subPath: data
