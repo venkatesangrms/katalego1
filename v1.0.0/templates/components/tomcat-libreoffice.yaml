@@ -103,9 +103,6 @@ spec:
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
           name: systemi-configuration-volume
           subPath: kma.ini
-        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini.1
-          name: systemi-configuration-volume
-          subPath: kma.ini.1
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMP/conf/kmp.ini
           name: systemi-configuration-volume
           subPath: kmp.ini
