@@ -13,7 +13,7 @@ image:
   LOGZIO: logzio/logzio-k8s:1.0.3
 logzio:
   cpu: 100
-  memory: 800
+  memory: 400
 resourceUnit:
   small:
     storage:
