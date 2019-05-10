@@ -1,4 +1,4 @@
-xpack.monitoring.enabled: true
+xpack.monitoring.enabled: false
 http.host: "0.0.0.0"
-xpack.monitoring.elasticsearch.url: https://listener.logz.io:5050
+xpack.monitoring.elasticsearch.url: https://listener.logz.io:8071?token=jOfZnYHaWzKzqeaWLiECYCdMaVulKuiP
 
