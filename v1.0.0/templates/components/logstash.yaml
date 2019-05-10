@@ -4,11 +4,14 @@ metadata:
   name: logstash
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: logstash
   template:
     metadata:
       name: logstash
       labels:
-        app: logging
+        app: logstash
         container_name: logstash
     spec:
       containers:
