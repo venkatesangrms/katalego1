@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: elasticsearch-persistent-volume-claim
   annotations:
-    volume.beta.kubernetes.io/storage-class: ms-storage-class
+    volume.beta.kubernetes.io/storage-class: gp2
 spec:
   accessModes:
     - ReadWriteOnce
