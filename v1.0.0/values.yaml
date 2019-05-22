@@ -5,7 +5,7 @@ image:
   DATAROUTER: metricstreaminc/datarouter:2.17.7-alpine-jre8u212-b03
   ACTIVEMQ: metricstreaminc/activemq:5.14.5-alpine-jre8u212-b03
   ELASTICSEARCH: metricstreaminc/elasticsearch:2.4.1-alpine-jre8u212-b03-ms-7.3.3
-  LIBREOFFICE: metricstreaminc/libreoffice:6.1.4.2-alpine-jdk8u212-b03
+  LIBREOFFICE: metricstreaminc/libreoffice:6.2.3.2-alpine-jre8u212-b03
   MONGO: metricstreaminc/mongodb:4.1.10-bionic
   ORACLE: metricstreaminc/oracle:12.2.0.1-ee
   INSTANCE_RESTORE_UPGRADE: metricstreaminc/systemi-oracle-data:7.19.2-12c2
@@ -28,16 +28,16 @@ resourceUnit:
         ORACLE: 4096
         TOMCAT: 2048
         ACTIVEMQ: 1024
-        ELASTICSEARCH: 2048
-        MONGO: 2048
+        ELASTICSEARCH: 1024
+        MONGO: 1024
         DATAROUTER: 1024
         LIBREOFFICE: 1024
     cpu:
       max:
         ORACLE: 750
-        TOMCAT: 750
+        TOMCAT: 500
         ACTIVEMQ: 250
-        ELASTICSEARCH: 500
+        ELASTICSEARCH: 250
         MONGO: 250
         DATAROUTER: 250
         LIBREOFFICE: 250
