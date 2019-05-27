@@ -47,9 +47,9 @@ spec:
     spec:
       serviceAccountName: common-service-account
       volumes:
-#      - name: tomcat-data-volume
-#        persistentVolumeClaim:
-#          claimName: tomcat-persistent-volume-claim
+      - name: tomcat-data-volume
+        persistentVolumeClaim:
+          claimName: tomcat-persistent-volume-claim
       - name: metricstream-license-keys-volume
         secret:
           secretName: metricstream-license-keys-secret
@@ -95,9 +95,9 @@ spec:
             cpu: {{ .cpu.max.TOMCAT }}m
         {{- end }}
         volumeMounts:
- #       - mountPath: /opt/metricstream/SYSTEMi
- #         subPath: SYSTEMi
- #         name: tomcat-data-volume
+        - mountPath: /opt/metricstream/SYSTEMi
+          subPath: SYSTEMi
+          name: tomcat-data-volume
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
