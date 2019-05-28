@@ -96,8 +96,9 @@ spec:
       initContainers:
       - name: ri-data-init
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.RI_DATA_INIT }} 
-        args: 
-        - {{ .Chart.Version }}
+        env: 
+        - name: MI_VERSION
+          value: {{ .Chart.Version }}
       - name: fluentd-container
         image: {{ .Values.image.LOGZIO }}
         env:
