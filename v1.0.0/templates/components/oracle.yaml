@@ -169,15 +169,12 @@ spec:
         - name: MI_VERSION
           value: {{ .Chart.Version }}
         volumeMounts:
-        - mountPath: /data/oracle/orcl
+        - mountPath: /data/oracle
           name: oracle-data-volume
-#      volumes:
-#      - name: oracle-data-volume
-#          mountPath: /opt/oracle/diag/rdbms/orcl
-#          subPath: orcl      
+          subPath: oradata
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
-        runAsNonRoot: true
+        runAsNonRoot: false
         fsGroup: 54321
       allowedCapabilities: null
