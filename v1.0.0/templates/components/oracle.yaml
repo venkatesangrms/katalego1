@@ -169,7 +169,7 @@ spec:
         - name: MI_VERSION
           value: {{ .Chart.Version }}
         volumeMounts:
-          mountPath: /data/oracle/orcl
+        - mountPath: /data/oracle/orcl
           name: oracle-data-volume
 #      volumes:
 #      - name: oracle-data-volume
