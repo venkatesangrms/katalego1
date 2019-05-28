@@ -102,10 +102,10 @@ spec:
         volumeMounts:
           mountPath: /data/oracle/orcl
           name: oracle-data-volume
-      volumes:
-      - name: oracle-data-volume
-          mountPath: /opt/oracle/diag/rdbms/orcl
-          subPath: orcl      
+#      volumes:
+#      - name: oracle-data-volume
+#          mountPath: /opt/oracle/diag/rdbms/orcl
+#          subPath: orcl      
       - name: fluentd-container
         image: {{ .Values.image.LOGZIO }}
         env:
