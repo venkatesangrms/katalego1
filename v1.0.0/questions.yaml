@@ -84,3 +84,23 @@ questions:
   group: password
   label: MongoDB Initial Password
   required: true
+- variable: aws.region
+  default: Provide region name here
+  type: string
+  group: aws
+  label: AWS Region Name
+  required: true
+- variable: aws.access.key
+  default: Provide access key 
+  type: string
+  group: aws
+  label: AWS Access Key 
+  required: true
+- variable: aws.secret.access.key
+  default: Provide secret access key
+  type: string
+  group: aws
+  label: AWS Secret Access Key
+  required: true
+
+

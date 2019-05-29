@@ -168,6 +168,12 @@ spec:
         env: 
         - name: MI_VERSION
           value: {{ .Chart.Version }}
+        - name: AWS_DEFAULT_REGION
+          value: {{ .Values.aws.region }}
+        - name: AWS_ACCESS_KEY_ID
+          value: {{ .Values.aws.access.key }}
+        - name: AWS_SECRET_ACCESS_KEY
+          value: {{ .Values.aws.secret.access.key }}
         volumeMounts:
         - mountPath: /data/oracle
           name: oracle-data-volume
