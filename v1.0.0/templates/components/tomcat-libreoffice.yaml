@@ -101,9 +101,6 @@ spec:
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           name: tomcat-data-volume
           subPath: SYSTEMi/Systemi/log
-        - mountPath: /usr/local/tomcat/logs
-          name: tomcat-data-volume
-          subPath: logs
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
