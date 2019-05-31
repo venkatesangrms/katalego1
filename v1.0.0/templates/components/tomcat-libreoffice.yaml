@@ -95,9 +95,12 @@ spec:
             cpu: {{ .cpu.max.TOMCAT }}m
         {{- end }}
         volumeMounts:
-        - mountPath: /opt/metricstream/SYSTEMi
-          subPath: SYSTEMi
+#        - mountPath: /opt/metricstream/SYSTEMi
+#          subPath: SYSTEMi
+#          name: tomcat-data-volume
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           name: tomcat-data-volume
+          subPath: SYSTEMi/Systemi/log
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
