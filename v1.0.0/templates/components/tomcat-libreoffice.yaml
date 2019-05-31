@@ -95,12 +95,9 @@ spec:
             cpu: {{ .cpu.max.TOMCAT }}m
         {{- end }}
         volumeMounts:
-#        - mountPath: /opt/metricstream/SYSTEMi
-#          subPath: SYSTEMi
-#          name: tomcat-data-volume
-        - mountPath: /opt/metricstream/SYSTEMi/Systemi/log
+        - mountPath: /opt/metricstream/SYSTEMi
+          subPath: SYSTEMi
           name: tomcat-data-volume
-          subPath: SYSTEMi/Systemi/log
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
         - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
@@ -243,15 +240,7 @@ spec:
         - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           subPath: SYSTEMi/Systemi/log
-      initContainers:
-      - name: oracle-instant-client
-        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ORACLE_INSTANT_CLIENT }}
-        env:
-        - name: USERNAME
-          value: {{ .Values.oracle.username }}
-        - name: PASSWORD
-          value: {{ .Values.oracle.password }}
-       imagePullSecrets:
+      imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
         runAsUser: 1000
