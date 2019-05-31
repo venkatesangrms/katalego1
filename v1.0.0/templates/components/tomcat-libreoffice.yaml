@@ -143,36 +143,36 @@ spec:
           subPath: tomcat_tmp
         securityContext:
           readOnlyRootFilesystem: true
-#      - name: libreoffice-container
-#        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIBREOFFICE }}
-#        imagePullPolicy: IfNotPresent
-#        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
-#        resources:
-#          limits:
-#            memory: {{ .memory.max.LIBREOFFICE }}Mi
-#            cpu: {{ .cpu.max.LIBREOFFICE }}m
-#          requests:
-#            memory: {{ .memory.max.LIBREOFFICE }}Mi
-#            cpu: {{ .cpu.max.LIBREOFFICE }}m
-#        {{- end }}
-#        ports:
-#        - name: lo-port
-#          containerPort: 8997
-#        volumeMounts:
-#        - mountPath: /opt/metricstream/SYSTEMi
-#          subPath: SYSTEMi
-#          name: tomcat-data-volume
-#        - mountPath: /opt/libreoffice
-#          subPath: libre_home
-#          name: tomcat-data-volume
-#        - mountPath: /tmp
-#          subPath: libre_tmp
-#          name: tomcat-data-volume
-#        - mountPath: /var/tmp
-#          subPath: libre_var_tmp
-#          name: tomcat-data-volume
-#        securityContext:
-#          readOnlyRootFilesystem: true
+      - name: libreoffice-container
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIBREOFFICE }}
+        imagePullPolicy: IfNotPresent
+        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
+        resources:
+          limits:
+            memory: {{ .memory.max.LIBREOFFICE }}Mi
+            cpu: {{ .cpu.max.LIBREOFFICE }}m
+          requests:
+            memory: {{ .memory.max.LIBREOFFICE }}Mi
+            cpu: {{ .cpu.max.LIBREOFFICE }}m
+        {{- end }}
+        ports:
+        - name: lo-port
+          containerPort: 8997
+        volumeMounts:
+        - mountPath: /opt/metricstream/SYSTEMi
+          subPath: SYSTEMi
+          name: tomcat-data-volume
+        - mountPath: /opt/libreoffice
+          subPath: libre_home
+          name: tomcat-data-volume
+        - mountPath: /tmp
+          subPath: libre_tmp
+          name: tomcat-data-volume
+        - mountPath: /var/tmp
+          subPath: libre_var_tmp
+          name: tomcat-data-volume
+        securityContext:
+          readOnlyRootFilesystem: true
       - name: fluentd
         image: {{ .Values.image.LOGZIO }}
         env:
@@ -243,7 +243,15 @@ spec:
         - name: tomcat-data-volume
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           subPath: SYSTEMi/Systemi/log
-      imagePullSecrets:
+      initContainers:
+      - name: oracle-instant-client
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ORACLE_INSTANT_CLIENT }}
+        env:
+        - name: USERNAME
+          value: {{ .Values.oracle.username }}
+        - name: PASSWORD
+          value: {{ .Values.oracle.password }}
+       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
         runAsUser: 1000

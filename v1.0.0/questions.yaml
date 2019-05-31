@@ -102,5 +102,17 @@ questions:
   group: AWS Credentials
   label: Secret Access Key
   required: true
+- variable: oracle.username
+  default: Provide username name
+  type: string
+  group: Oracle Credentials
+  label: User Name
+  required: true
+- variable: oracle.password
+  default: Provide password
+  type: string
+  group: Oracle Credentials
+  label: Password
+  required: true
 
 
