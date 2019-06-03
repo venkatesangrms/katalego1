@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: datarouter-deployment
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: datarouter
@@ -128,6 +128,11 @@ spec:
         - name: datarouter-data-volume
           mountPath: /opt/datarouter/logs
           subPath: logs
+      initContainers:
+      - name: oracle-instant-client
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.URL_HEALTH_CHECK }}
+        args: 
+        - {{ .Release.Namespace }}.k8s.metricstream.com/ui
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:

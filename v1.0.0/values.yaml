@@ -13,6 +13,7 @@ image:
   LOGZIO: logzio/logzio-k8s:1.0.3
   RI_DATA_INIT: metricstreaminc/ri-data-init:1.0.0
   ORACLE_INSTANT_CLIENT: metricstreaminc/instant-client:12.2.0.1
+  URL_HEALTH_CHECK: metricstreaminc/utility:1.0.0
 logzio:
   cpu: 100
   memory: 400
