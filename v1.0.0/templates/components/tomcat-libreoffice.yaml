@@ -245,12 +245,12 @@ spec:
           subPath: SYSTEMi/Systemi/log
       initContainers:
       - name: oracle-instant-client
-        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ORACLE_INSTANT_CLIENT }}
-        env:
-        - name: USERNAME
-          value: {{ .Values.oracle.username }}
-        - name: PASSWORD
-          value: {{ .Values.oracle.password }}
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.CONTAINER_READINESS }}
+        args:
+          - {{ .Values.kube.url }}
+          - {{ .Release.Namespace }}
+          - oracle-deployment
+          - oracle-container
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:

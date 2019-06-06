@@ -114,5 +114,11 @@ questions:
   group: Oracle Credentials
   label: Password
   required: true
+- variable: kube.url
+  default: https://172.27.141.191:6443
+  type: string
+  group: Kube Server URL
+  label: URL
+  required: true
 
 

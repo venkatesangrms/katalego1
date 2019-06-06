@@ -51,6 +51,16 @@ spec:
             configMapKeyRef:
               name: resource-unit-configmap
               key: ORACLE_MAX_MEM
+        readinessProbe:
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - connection_status=`echo exit | sqlplus {{ .Values.oracle.username }}/{{ .Values.oracle.password }}@localhost:1521/orcl`; if [[ ! $connection_status =~ "Connected" ]] ; then  exit 1; else exit 0; fi
+          initialDelaySeconds: 5
+          periodSeconds: 15 
+  initialDelaySeconds: 5
+  periodSeconds: 5
         ports:
         - name: oracle-port
           containerPort: 1521
