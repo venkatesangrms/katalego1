@@ -51,6 +51,16 @@ spec:
             configMapKeyRef:
               name: resource-unit-configmap
               key: ORACLE_MAX_MEM
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: oracle-credential-secret
+              key: USERNAME
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: oracle-credential-secret
+              key: PASSWORD
         readinessProbe:
           exec:
             command:
