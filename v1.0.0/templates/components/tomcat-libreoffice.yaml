@@ -95,9 +95,6 @@ spec:
             cpu: {{ .cpu.max.TOMCAT }}m
         {{- end }}
         volumeMounts:
-#        - mountPath: /opt/metricstream/SYSTEMi
-#          subPath: SYSTEMi
-#          name: tomcat-data-volume
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           name: tomcat-data-volume
           subPath: SYSTEMi/Systemi/log
@@ -245,12 +242,18 @@ spec:
           subPath: SYSTEMi/Systemi/log
       initContainers:
       - name: oracle-instant-client
-        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.CONTAINER_READINESS }}
-        args:
-          - {{ .Values.kube.url }}
-          - {{ .Release.Namespace }}
-          - oracle-deployment
-          - oracle-container
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIVE_CHECK }}
+        env:
+          - name: K8S_URL
+            value: {{ .Values.kube.url }}
+          - name: NAMESPACE
+            value: {{ .Release.Namespace }}
+          - name: DEPLOYMENT_NAME
+            value: oracle-deployment
+          - name: CONTAINER_NAME
+            value: oracle-container
+          - name: TIMEOUT_MINUTES
+            value: 10
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
