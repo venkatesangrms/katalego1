@@ -241,7 +241,7 @@ spec:
           mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           subPath: SYSTEMi/Systemi/log
       initContainers:
-      - name: oracle-instant-client
+      - name: oracle-container-live-check
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIVE_CHECK }}
         env:
           - name: K8S_URL
@@ -252,8 +252,8 @@ spec:
             value: oracle-deployment
           - name: CONTAINER_NAME
             value: oracle-container
-          - name: TIMEOUT_MINUTES
-            value: "10"
+          - name: TIMEOUT
+            value: "600"
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
