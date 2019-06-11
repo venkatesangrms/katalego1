@@ -129,10 +129,21 @@ spec:
           mountPath: /opt/datarouter/logs
           subPath: logs
       initContainers:
-      - name: oracle-instant-client
-        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.URL_HEALTH_CHECK }}
-        args: 
-        - http://{{ .Release.Namespace }}.k8s.metricstream.com
+      - name: tomcat-container-live-check
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.LIVE_CHECK }}
+        env:
+          - name: K8S_URL
+            value: {{ .Values.kube.url }}
+          - name: NAMESPACE
+            value: {{ .Release.Namespace }}
+          - name: DEPLOYMENT_NAME
+            value: tomcat-deployment
+          - name: CONTAINER_NAME
+            value: tomcat-container
+          - name: TIMEOUT
+            value: "600"
+          - name: SLEEP_TIME
+            value: "20"
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
