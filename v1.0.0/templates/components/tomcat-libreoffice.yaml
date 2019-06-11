@@ -80,6 +80,17 @@ spec:
               key: TOMCAT_JAVA_XMX
         - name: CLASSPATH
           value: "/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar"
+        readinessProbe:
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - connection_status=`echo exit | curl -Is http://{{ .Release.Namespace }}.k8s.metricstream.com | head -n 1`; if [[ ! $connection_status =~ "200" ]] ; then  exit 1; else exit 0; fi
+          failureThreshold: 10
+          initialDelaySeconds: 5
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 1
         ports:
         - name: tomcat-port
           containerPort: 8080
@@ -254,6 +265,8 @@ spec:
             value: oracle-container
           - name: TIMEOUT
             value: "600"
+          - name: SLEEP_TIME
+            value: "20"
       imagePullSecrets:
       - name: container-registry-key-secret
       securityContext:
