@@ -83,7 +83,7 @@ spec:
         readinessProbe:
           httpGet:
             path: /ui
-            port: 8080
+            port: tomcat-port
           failureThreshold: 10
           initialDelaySeconds: 5
           periodSeconds: 15
@@ -92,7 +92,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /ui
-            port: 8080
+            port: tomcat-port
           failureThreshold: 10
           initialDelaySeconds: 300
           periodSeconds: 20

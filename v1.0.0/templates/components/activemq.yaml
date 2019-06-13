@@ -44,6 +44,14 @@ spec:
       - name: activemq-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ACTIVEMQ }}
         imagePullPolicy: IfNotPresent
+        readinessProbe:
+          tcpSocket:
+            port: activemq-port
+          failureThreshold: 10
+          initialDelaySeconds: 5
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 10
         ports:
         - name: activemq-port
           containerPort: 61616
