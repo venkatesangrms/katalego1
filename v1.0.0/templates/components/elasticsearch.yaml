@@ -76,6 +76,22 @@ spec:
           subPath: tmp
         securityContext:
           readOnlyRootFilesystem: true
+        readinessProbe:
+          tcpSocket:
+            port: es-port
+          failureThreshold: 10
+          initialDelaySeconds: 5
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: es-port
+          failureThreshold: 10
+          initialDelaySeconds: 300
+          periodSeconds: 15
+          successThreshold: 1
+          timeoutSeconds: 10
         ports:
         - name: es-port
           containerPort: 9300
