@@ -77,19 +77,25 @@ spec:
         securityContext:
           readOnlyRootFilesystem: true
         readinessProbe:
-          tcpSocket:
-            port: es-port
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - connection_status=`curl localhost:9200/_cat/health`; if [[ ! $connection_status =~ "metricstream" ]] ; then  exit 1; else exit 0; fi
           failureThreshold: 10
           initialDelaySeconds: 5
           periodSeconds: 15
           successThreshold: 1
-          timeoutSeconds: 10
+          timeoutSeconds: 1
         livenessProbe:
-          tcpSocket:
-            port: es-port
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - connection_status=`curl localhost:9200/_cat/health`; if [[ ! $connection_status =~ "metricstream" ]] ; then  exit 1; else exit 0; fi
           failureThreshold: 10
           initialDelaySeconds: 300
-          periodSeconds: 15
+          periodSeconds: 20
           successThreshold: 1
           timeoutSeconds: 10
         ports:
