@@ -45,19 +45,39 @@ spec:
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ACTIVEMQ }}
         imagePullPolicy: IfNotPresent
         readinessProbe:
-          tcpSocket:
-            port: activemq-port
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - >
+                url="http://localhost:8161/api/jolokia/exec/org.apache.activemq:type=Broker,brokerName=localhost,service=Health/healthStatus"
+                connection_status=`curl -u $ACTIVEMQ_CREDENTIAL -s $url`; 
+                if [[ ! $connection_status =~ "\"status\":200" ]] ; then  
+                exit 1; 
+                else 
+                exit 0; 
+                fi
           failureThreshold: 10
           initialDelaySeconds: 5
           periodSeconds: 15
           successThreshold: 1
-          timeoutSeconds: 10
+          timeoutSeconds: 1
         livenessProbe:
-          tcpSocket:
-            port: activemq-port
+          exec:
+            command:
+              - /bin/bash
+              - -c
+              - >
+                url="http://localhost:8161/api/jolokia/exec/org.apache.activemq:type=Broker,brokerName=localhost,service=Health/healthStatus"
+                connection_status=`curl -u $ACTIVEMQ_CREDENTIAL -s $url`;
+                if [[ ! $connection_status =~ "\"status\":200" ]] ; then
+                exit 1;
+                else
+                exit 0;
+                fi
           failureThreshold: 10
           initialDelaySeconds: 300
-          periodSeconds: 15
+          periodSeconds: 20
           successThreshold: 1
           timeoutSeconds: 10
         ports:
