@@ -103,6 +103,8 @@ spec:
           containerPort: 8080
         - name: tomcat-jmx-port
           containerPort: 8888
+        - name: lo-port
+          containerPort: 8997
         {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
         resources:
           limits:
