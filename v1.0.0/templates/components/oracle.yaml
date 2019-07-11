@@ -134,6 +134,9 @@ spec:
         - mountPath: /var/tmp
           name: oracle-data-volume
           subPath: var_tmp
+        - mountPath: /opt/oracle/cfgtoollogs
+          name: oracle-data-volume
+          subPath: opt_oracle/cfgtoollogs
         securityContext:
           runAsUser: 54321
           readOnlyRootFilesystem: true
