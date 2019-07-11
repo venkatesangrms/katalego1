@@ -161,6 +161,9 @@ spec:
         - mountPath: /var/tmp
           subPath: libre_var_tmp
           name: tomcat-data-volume
+        - mountPath: /home/tomcat
+          subPath: libre_home_tomcat
+          name: tomcat-data-volume
         securityContext:
           readOnlyRootFilesystem: true
       - name: fluentd
