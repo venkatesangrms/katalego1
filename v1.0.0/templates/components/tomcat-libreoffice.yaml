@@ -164,8 +164,11 @@ spec:
         - mountPath: /home/tomcat
           subPath: libre_home_tomcat
           name: tomcat-data-volume
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/temp
+          name: tomcat-data-volume
+          subPath: libre_systemi_temp
         securityContext:
-          readOnlyRootFilesystem: true
+          readOnlyRootFilesystem: false
       - name: fluentd
         image: {{ .Values.image.LOGZIO }}
         env:

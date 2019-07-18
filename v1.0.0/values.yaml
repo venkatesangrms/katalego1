@@ -2,18 +2,14 @@ label:
   ENVIRONMENT: development
 image:
   TOMCAT: metricstreaminc/ri-app:7.19.2
-  DATAROUTER: metricstreaminc/datarouter:2.17.7-alpine-jre8u212-b03
-  ACTIVEMQ: metricstreaminc/activemq:5.14.5-alpine-jre8u212-b03
-  ELASTICSEARCH: metricstreaminc/elasticsearch:2.4.1-alpine-jre8u212-b03-ms-7.3.3
-  LIBREOFFICE: metricstreaminc/libreoffice:6.2.3.2-alpine-jre8u212-b03
-  MONGO: metricstreaminc/mongodb:4.1.10-bionic
+  DATAROUTER: metricstreaminc/datarouter:2.17.7-jre8u212-b04
+  ACTIVEMQ: metricstreaminc/activemq:5.14.5-jre8u212-b04
+  ELASTICSEARCH: metricstreaminc/elasticsearch:2.4.1-jre8u212-b04-m7.3.3
+  MONGO: metricstreaminc/mongodb:4.1.10
   ORACLE: metricstreaminc/oracle:12.2.0.1-ee
-  INSTANCE_RESTORE_UPGRADE: metricstreaminc/systemi-oracle-data:7.19.2-12c2
   LOGSTASH: metricstreaminc/logstash:7.0.0-ojdbc6
-  LOGZIO: logzio/logzio-k8s:1.0.3
+  LOGZIO: metricstreaminc/fluent:1.4.2-1.0-es-3.4.3
   RI_DATA_INIT: metricstreaminc/ri-data-init:1.0.0
-  ORACLE_INSTANT_CLIENT: metricstreaminc/instant-client:12.2.0.1
-  URL_HEALTH_CHECK: metricstreaminc/utility:1.0.0
   LIVE_CHECK: metricstreaminc/live-check:1.0.0 
 logzio:
   cpu: 100
