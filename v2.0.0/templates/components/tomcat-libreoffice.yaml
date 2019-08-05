@@ -132,9 +132,9 @@ spec:
 #        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/shiro.ini
 #          name: systemi-configuration-volume
 #          subPath: shiro.ini
-#        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/web.xml
-#          name: systemi-configuration-volume
-#          subPath: web.xml
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/web.xml
+          name: systemi-configuration-volume
+          subPath: web.xml
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/Config/config.client.xml
           name: systemi-configuration-volume
           subPath: config.client.xml
