@@ -500,7 +500,7 @@
       <PROPERTY NAME="CLUSTER_ENABLE">no</PROPERTY>
       <!--   For Cross site scripting -->
       <!--   Added for multiple domain name check for Open Redirection -->
-      <PROPERTY NAME="ADDITIONAL_DOMAINS">http&secure;://&hostname;:&webserverport;</PROPERTY>
+      <PROPERTY NAME="ADDITIONAL_DOMAINS">http&secure;://&hostname;:&webserverport;,http&secure;://&hostname;</PROPERTY>
       <!--    For maintaing Block & White list of Tags for form fields  -->
       <PROPERTY NAME="ALLOWED_TAG_LIST">&lt;b&gt;,&lt;/b&gt;,&lt;i&gt;,&lt;/i&gt;,&lt;B&gt;,&lt;/B&gt;,&lt;I&gt;,&lt;/I&gt;,&lt;br&gt;,&lt;BR&gt;</PROPERTY>
       <PROPERTY NAME="BLOCK_TAG_LIST">&lt;script,&lt;SCRIPT,&lt;script&gt;,&lt;/script&gt;&lt;SCRIPT&gt;,&lt;/SCRIPT&gt;</PROPERTY>
