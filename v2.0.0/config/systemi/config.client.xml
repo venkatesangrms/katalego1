@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE MODULE SYSTEM "file://localhost//opt/MetricStream/SYSTEMi/Systemi/Doc/Module.dtd" [
-  <!ENTITY license SYSTEM "file://localhost//opt/MetricStream/SYSTEMi/Systemi/keys/MetricStream_license.xml">
+<!DOCTYPE MODULE SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/Doc/Module.dtd" [
+  <!ENTITY license SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/keys/MetricStream_license.xml">
   <!ENTITY hostname "{{ .Release.Namespace }}.k8s.metricstream.com">
   <!ENTITY webserverport "8085">
   <!ENTITY workflowhostname "127.0.0.1">
   <!ENTITY webserviceport "8268">
   <!ENTITY sqlagentport "8277">
   <!ENTITY nonsqlagentport "8278">
-  <!ENTITY systemi_root "/opt/MetricStream/SYSTEMi">
+  <!ENTITY systemi_root "/opt/metricstream/SYSTEMi">
   <!ENTITY key_root "&systemi_root;/Systemi">
   <!ENTITY font_name "Verdana">
   <!ENTITY resource "Resource">
