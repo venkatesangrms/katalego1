@@ -120,12 +120,12 @@ spec:
           subPath: SYSTEMi/Systemi/log
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/keys
           name: metricstream-license-keys-volume
-#        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
-#          name: systemi-configuration-volume
-#          subPath: kma.ini
-#        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMP/conf/kmp.ini
-#          name: systemi-configuration-volume
-#          subPath: kmp.ini
+        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMA/conf/kma.ini
+          name: systemi-configuration-volume
+          subPath: kma.ini
+        - mountPath: /opt/metricstream/SYSTEMi/KMS/KMP/conf/kmp.ini
+          name: systemi-configuration-volume
+          subPath: kmp.ini
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/conf/mongodb.properties
           name: systemi-configuration-volume
           subPath: mongodb.properties
