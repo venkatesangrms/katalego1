@@ -60,22 +60,6 @@ questions:
   group: Container Login Credentials
   label: Container Registry Password
   required: true
-- variable: logzio.url
-  default: https://listener.logz.io:8071
-  description: |
-    Logz.io Account URL
-  type: string
-  group: Logzio
-  label: Logz.io URL
-  required: true
-- variable: logzio.token
-  default: Provide token here
-  description: |
-    Logz.io Account Token
-  type: string
-  group: Logzio
-  label: Logz.io Access Token
-  required: true
 - variable: password.mongodb
   default: Provide MongoDB initial password
   description: |

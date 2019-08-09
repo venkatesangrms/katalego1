@@ -8,6 +8,10 @@ spec:
       protocol: TCP
       port: 9300
       targetPort: 9300
+    - name: elasticsearch-rest-service-port
+      protocol: TCP
+      port: 9200
+      targetPort: 9200
   selector:
     app: elasticsearch
 ---
@@ -113,6 +117,8 @@ spec:
         ports:
         - name: es-port
           containerPort: 9300
+        - name: es-rest-port
+          containerPort: 9200
       - name: fluentd-container
         image: {{ .Values.image.LOGZIO }}
         env:
