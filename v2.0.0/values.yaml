@@ -12,7 +12,7 @@ image:
   RI_DATA_INIT: metricstreaminc/ri-data-init:1.0.0
   LIVE_CHECK: metricstreaminc/live-check:1.0.0
   KIBANA: docker.elastic.co/kibana/kibana-oss:6.3.2
-  ELASTICSEARCH_LOGGING: docker.elastic.co/elasticsearch/elasticsearch:7.3.0
+  ELASTICSEARCH_LOGGING: k8s.gcr.io/elasticsearch:v6.3.0
 logzio:
   cpu: 100
   memory: 400
