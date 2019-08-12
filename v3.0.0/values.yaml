@@ -11,8 +11,8 @@ image:
   LOGZIO: metricstreaminc/fluent:1.4.2-1.0-es-3.4.3
   RI_DATA_INIT: metricstreaminc/ri-data-init:1.0.0
   LIVE_CHECK: metricstreaminc/live-check:1.0.0
-  KIBANA: docker.elastic.co/kibana/kibana:6.8.2
-  ELASTICSEARCH_LOGGING: docker.elastic.co/elasticsearch/elasticsearch:6.8.2
+  KIBANA: docker.elastic.co/kibana/kibana:7.3.0
+  ELASTICSEARCH_LOGGING: metricstreaminc/elasticsearch:7.3.0-jre8u212-b04
 logzio:
   cpu: 100
   memory: 400
