@@ -65,3 +65,12 @@ spec:
           containerPort: 9300
         - name: es-rest-port
           containerPort: 9200
+      initContainers:
+      - name: elasticsearch-logging-init
+        image: busybox:1.29.2
+        command: ['sh', '-c', 'chown -R 1000:1000 /usr/share/elasticsearch/data']
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: elasticsearch-logging-data-volume
+          subPath: data
+
