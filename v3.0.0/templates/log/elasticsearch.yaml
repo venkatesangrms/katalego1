@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch-logging-service
+spec:
+  ports:
+    - name: elasticsearch-logging-service-port
+      protocol: TCP
+      port: 9300
+      targetPort: 9300
+    - name: elasticsearch-logging-rest-service-port
+      protocol: TCP
+      port: 9200
+      targetPort: 9200
+  selector:
+    app: elasticsearch-logging
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elasticsearch-logging-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elasticsearch-logging
+  template:
+    metadata:
+      name: elasticsearch-logging
+      labels:
+        app: elasticsearch-logging
+        tier: persitent-tier
+        container_name: elasticsearch-logging
+        environment: {{ .Values.label.ENVIRONMENT }}        
+    spec:
+      serviceAccountName: common-service-account
+      volumes:
+      - name: elasticsearch-logging-data-volume
+        persistentVolumeClaim:
+          claimName: elasticsearch-logging-persistent-volume-claim
+      containers:
+      - name: elasticsearch-logging-container
+        image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ELASTICSEARCH_LOGGING }}
+        imagePullPolicy: IfNotPresent
+        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
+        env:
+        - name: ES_MAX_MEM
+          value: {{ .memory.max.ELASTICSEARCH }}m
+        - name: processors
+          value: "1"
+        resources:
+          limits:
+            memory: {{ .memory.max.ELASTICSEARCH }}Mi
+            cpu: {{ .cpu.max.ELASTICSEARCH }}m
+          requests:
+            memory: {{ .memory.max.ELASTICSEARCH }}Mi
+            cpu: {{ .cpu.max.ELASTICSEARCH }}m
+        {{- end }}
+        volumeMounts:
+        - mountPath: /usr/share/elasticsearch/data
+          name: elasticsearch-logging-data-volume
+          subPath: data
+        ports:
+        - name: es-port
+          containerPort: 9300
+        - name: es-rest-port
+          containerPort: 9200
