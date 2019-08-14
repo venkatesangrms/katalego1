@@ -25,6 +25,8 @@
                     <Valve className="org.apache.catalina.valves.rewrite.RewriteValve" />
                 </Context>
                 <Context path="/si_image" docBase="/opt/metricstream/SYSTEMi/Systemi/Resource/images" />
+                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" 
+                   prefix="localhost_access_log" suffix=".txt" pattern="%h %l %u %t &quot;%r&quot; %s %b" />
             </Host>
         </Engine>
     </Service>
