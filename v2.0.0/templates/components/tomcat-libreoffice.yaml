@@ -129,9 +129,9 @@ spec:
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/conf/mongodb.properties
           name: systemi-configuration-volume
           subPath: mongodb.properties
-#        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/shiro.ini
-#          name: systemi-configuration-volume
-#          subPath: shiro.ini
+        - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/shiro.ini
+          name: systemi-configuration-volume
+          subPath: shiro.ini
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/webapp/WEB-INF/web.xml
           name: systemi-configuration-volume
           subPath: web.xml
