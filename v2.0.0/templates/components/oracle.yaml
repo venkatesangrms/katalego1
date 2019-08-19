@@ -37,7 +37,7 @@ spec:
       - name: oracle-dshm-volume
         emptyDir:
           medium: Memory
-          sizeLimit: "4096Mi"
+          sizeLimit: "6144Mi"
       - name: oracle-fluentd-config-volume
         configMap:
           name: oracle-fluentd-configmap
