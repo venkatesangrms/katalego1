@@ -252,7 +252,7 @@ spec:
           - name: CONTAINER_NAME
             value: oracle-container
           - name: TIMEOUT
-            value: "1800"
+            value: "2400"
           - name: SLEEP_TIME
             value: "20"
       imagePullSecrets:
