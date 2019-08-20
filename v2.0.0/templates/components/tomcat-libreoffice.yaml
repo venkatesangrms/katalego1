@@ -65,7 +65,7 @@ spec:
       containers:
       - name: tomcat-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.TOMCAT }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         env:
         - name: POD_NAME
           value: tomcat
