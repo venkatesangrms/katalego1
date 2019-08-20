@@ -37,7 +37,7 @@ resourceUnit:
     cpu:
       max:
         ORACLE: 2000
-        TOMCAT: 1000
+        TOMCAT: 2000
         ACTIVEMQ: 250
         ELASTICSEARCH: 500
         MONGO: 250
