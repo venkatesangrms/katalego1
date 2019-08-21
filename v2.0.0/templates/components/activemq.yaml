@@ -29,6 +29,15 @@ spec:
         container_name: activemq
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/hostname
+                operator: In
+                values:
+                - vmidoctest6
       serviceAccountName: common-service-account
       volumes:
       - name: activemq-data-volume
