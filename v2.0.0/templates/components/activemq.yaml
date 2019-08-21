@@ -95,14 +95,14 @@ spec:
             secretKeyRef:
               name: activemq-credential-secret
               key: CREDENTIAL
-        resources:
-          limits:
-            memory: {{ .memory.max.ACTIVEMQ }}Mi
-            cpu: {{ .cpu.max.ACTIVEMQ }}m
-          requests:
-            memory: {{ .memory.max.ACTIVEMQ }}Mi
-            cpu: {{ .cpu.max.ACTIVEMQ }}m
-        {{- end }}
+#        resources:
+#          limits:
+#            memory: {{ .memory.max.ACTIVEMQ }}Mi
+#            cpu: {{ .cpu.max.ACTIVEMQ }}m
+#          requests:
+#            memory: {{ .memory.max.ACTIVEMQ }}Mi
+#            cpu: {{ .cpu.max.ACTIVEMQ }}m
+#        {{- end }}
         volumeMounts:
         - mountPath: /opt/activemq/data
           name: activemq-data-volume

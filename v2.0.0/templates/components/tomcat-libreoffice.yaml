@@ -105,15 +105,15 @@ spec:
           containerPort: 8888
         - name: lo-port
           containerPort: 8997
-        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
-        resources:
-          limits:
-            memory: {{ .memory.max.TOMCAT }}Mi
-            cpu: {{ .cpu.max.TOMCAT }}m
-          requests:
-            memory: {{ .memory.max.TOMCAT }}Mi
-            cpu: {{ .cpu.max.TOMCAT }}m
-        {{- end }}
+#        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
+#        resources:
+#          limits:
+#            memory: {{ .memory.max.TOMCAT }}Mi
+#            cpu: {{ .cpu.max.TOMCAT }}m
+#          requests:
+#            memory: {{ .memory.max.TOMCAT }}Mi
+#            cpu: {{ .cpu.max.TOMCAT }}m
+#        {{- end }}
         volumeMounts:
         - mountPath: /opt/metricstream/SYSTEMi/Systemi/log
           name: tomcat-data-volume

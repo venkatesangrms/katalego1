@@ -54,14 +54,14 @@ spec:
           value: {{ .memory.max.ELASTICSEARCH }}m
         - name: processors
           value: "1"
-        resources:
-          limits:
-            memory: {{ .memory.max.ELASTICSEARCH }}Mi
-            cpu: {{ .cpu.max.ELASTICSEARCH }}m
-          requests:
-            memory: {{ .memory.max.ELASTICSEARCH }}Mi
-            cpu: {{ .cpu.max.ELASTICSEARCH }}m
-        {{- end }}
+#        resources:
+#          limits:
+#            memory: {{ .memory.max.ELASTICSEARCH }}Mi
+#            cpu: {{ .cpu.max.ELASTICSEARCH }}m
+#          requests:
+#            memory: {{ .memory.max.ELASTICSEARCH }}Mi
+#            cpu: {{ .cpu.max.ELASTICSEARCH }}m
+#        {{- end }}
         volumeMounts:
         - mountPath: /usr/share/elasticsearch/data
           name: elasticsearch-data-volume
