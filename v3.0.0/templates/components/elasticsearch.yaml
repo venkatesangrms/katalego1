@@ -33,15 +33,6 @@ spec:
         container_name: elasticsearch
         environment: {{ .Values.label.ENVIRONMENT }}        
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - vmidoctest13
       serviceAccountName: common-service-account
       volumes:
       - name: elasticsearch-data-volume
