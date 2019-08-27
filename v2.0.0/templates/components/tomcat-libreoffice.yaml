@@ -266,6 +266,8 @@ spec:
             value: "20"
       imagePullSecrets:
       - name: container-registry-key-secret
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       securityContext:
         runAsUser: 1000
         runAsNonRoot: true

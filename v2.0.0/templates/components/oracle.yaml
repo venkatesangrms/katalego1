@@ -236,6 +236,8 @@ spec:
           subPath: oradata
       imagePullSecrets:
       - name: container-registry-key-secret
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       securityContext:
         runAsNonRoot: false
         fsGroup: 54321
