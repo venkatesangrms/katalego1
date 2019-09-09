@@ -7,7 +7,7 @@ spec:
     - name: tomcat-service-port
       protocol: TCP
       port: 80
-      nodePort: 30001
+      targetPort: 8080
   selector:
     app: tomcat
   {{- if or (eq "GKE" .Values.cloudService.provider) (eq "EKS" .Values.cloudService.provider) (eq "VM" .Values.cloudService.provider)}}
