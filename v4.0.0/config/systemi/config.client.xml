@@ -2,7 +2,7 @@
 <!DOCTYPE MODULE SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/Doc/Module.dtd" [
   <!ENTITY license SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/keys/MetricStream_license.xml">
   <!ENTITY hostname "vmidoctest13">
-  <!ENTITY webserverport "8080">
+  <!ENTITY webserverport "30001">
   <!ENTITY workflowhostname "127.0.0.1">
   <!ENTITY webserviceport "8268">
   <!ENTITY sqlagentport "8277">
