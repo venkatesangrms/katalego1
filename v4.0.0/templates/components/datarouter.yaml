@@ -16,15 +16,15 @@ spec:
         container_name: datarouter
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - ip-192-168-152-172
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: kubernetes.io/hostname
+#                operator: In
+#                values:
+#                - ip-192-168-152-172
       serviceAccountName: common-service-account
       volumes:      
       - name: datarouter-data-volume

@@ -36,7 +36,7 @@ resourceUnit:
         LIBREOFFICE: 1024
     cpu:
       max:
-        ORACLE: 4000
+        ORACLE: 15000
         TOMCAT: 4000
         ACTIVEMQ: 250
         ELASTICSEARCH: 500
