@@ -51,7 +51,7 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                - ip-192-168-66-164.ec2.internal
+                - ip-192-168-66-164
       serviceAccountName: common-service-account
       volumes: 
       - name: oracle-data-volume

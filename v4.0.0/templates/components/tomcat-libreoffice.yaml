@@ -53,7 +53,7 @@ spec:
               - key: kubernetes.io/hostname
                 operator: In
                 values:
-                - ip-192-168-226-229.ec2.internal
+                - ip-192-168-226-229
       serviceAccountName: common-service-account
       volumes:
       - name: tomcat-data-volume
