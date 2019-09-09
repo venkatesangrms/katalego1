@@ -20,7 +20,7 @@ spec:
     - name: oracle-nodeport-service-port
       protocol: TCP
       port: 1521
-      nodePort: 3333
+      nodePort: 33333
   selector:
     app: oracle
   type: NodePort
