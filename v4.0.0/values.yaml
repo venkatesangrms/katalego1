@@ -23,7 +23,7 @@ resourceUnit:
         ACTIVEMQ: 50
         ELASTICSEARCH: 100
         MONGO: 100
-        ORACLE: 475
+        ORACLE: 950
         TOMCAT: 250
     memory:
       max:
