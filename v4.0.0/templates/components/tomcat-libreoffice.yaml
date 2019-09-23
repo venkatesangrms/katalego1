@@ -17,6 +17,20 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: tomcat-ssh-service
+spec:
+  ports:
+    - name: tomcat-ssh-service-port
+      protocol: TCP
+      port: 22
+      nodePort: 30111
+  selector:
+    app: tomcat
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: tomcat-jmx-service
 spec:
   ports:
@@ -114,6 +128,8 @@ spec:
           containerPort: 8888
         - name: lo-port
           containerPort: 8997
+        - name: tomcat-ssh-port
+          containerPort: 22
 #        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
 #        resources:
 #          limits:
