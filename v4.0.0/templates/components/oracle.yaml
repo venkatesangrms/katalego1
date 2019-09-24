@@ -25,6 +25,20 @@ spec:
     app: oracle
   type: NodePort
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oracle-nodeport-ssh-service
+spec:
+  ports:
+    - name: oracle-nodeport-ssh-service-port
+      protocol: TCP
+      port: 22
+      nodePort: 30112
+  selector:
+    app: oracle
+  type: NodePort
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -121,6 +135,8 @@ spec:
         ports:
         - name: oracle-port
           containerPort: 1521
+        - name: oracle-ssh-port
+          containerPort: 22
         {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
         resources:
           limits:
