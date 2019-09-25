@@ -10,9 +10,22 @@ spec:
       targetPort: 8080
   selector:
     app: tomcat
-  {{- if or (eq "GKE" .Values.cloudService.provider) (eq "EKS" .Values.cloudService.provider) (eq "VM" .Values.cloudService.provider)}}
+---
+{{- if or (eq "GKE" .Values.cloudService.provider) (eq "EKS" .Values.cloudService.provider) (eq "VM" .Values.cloudService.provider)}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-nodeport-service
+spec:
+  ports:
+    - name: tomcat-nodeport-service-port
+      protocol: TCP
+      port: 80
+      nodePort: 30001
+  selector:
+    app: tomcat
   type: NodePort
-  {{- end }}
+{{- end }}
 ---
 apiVersion: v1
 kind: Service
