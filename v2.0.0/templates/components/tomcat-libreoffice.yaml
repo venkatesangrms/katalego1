@@ -17,6 +17,22 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
+  name: tomcat-ssl-service
+spec:
+  ports:
+    - name: tomcat-service-port
+      protocol: TCP
+      port: 8443
+      targetPort: 8443
+  selector:
+    app: tomcat
+  {{- if or (eq "GKE" .Values.cloudService.provider) (eq "EKS" .Values.cloudService.provider) }}
+  type: NodePort
+  {{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: tomcat-jmx-service
 spec:
   ports:
@@ -114,6 +130,8 @@ spec:
           containerPort: 8888
         - name: lo-port
           containerPort: 8997
+        - name: tomcat-ssl-port
+          containerPort: 8443
 #        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
 #        resources:
 #          limits:
