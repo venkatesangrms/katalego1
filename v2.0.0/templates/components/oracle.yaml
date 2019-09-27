@@ -29,15 +29,15 @@ spec:
         container_name: oracle
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - vmidoctest7
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: kubernetes.io/hostname
+#                operator: In
+#                values:
+#                - vmidoctest7
       serviceAccountName: common-service-account
       volumes: 
       - name: oracle-data-volume

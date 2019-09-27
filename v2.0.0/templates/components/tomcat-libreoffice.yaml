@@ -45,15 +45,15 @@ spec:
         container_name: tomcat
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: kubernetes.io/hostname
-                operator: In
-                values:
-                - vmidoctest8
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: kubernetes.io/hostname
+#                operator: In
+#                values:
+#                - vmidoctest8
       serviceAccountName: common-service-account
       volumes:
       - name: tomcat-data-volume
