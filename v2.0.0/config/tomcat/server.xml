@@ -10,6 +10,7 @@
                    connectionTimeout="20000"
                    maxHttpHeaderSize="65536"
                    secure="false" />
+<!--
 
         <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true" scheme="https" secure="true">
@@ -19,7 +20,7 @@
                          type="RSA" />
              </SSLHostConfig>
         </Connector>
-
+-->
 
         <Engine name="Catalina"
                 defaultHost="localhost"

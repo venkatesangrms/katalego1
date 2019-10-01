@@ -20,11 +20,11 @@ resourceUnit:
   small:
     storage:
       size:
-        ACTIVEMQ: 6
-        ELASTICSEARCH: 6
-        MONGO: 6
-        ORACLE: 25
-        TOMCAT: 12
+        ACTIVEMQ: 12
+        ELASTICSEARCH: 12
+        MONGO: 12
+        ORACLE: 50
+        TOMCAT: 24
     memory:
       max:
         ORACLE: 9216
