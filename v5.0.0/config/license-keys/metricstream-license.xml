@@ -1,0 +1,18 @@
+<!--<?xml version="1.0"?>-->
+ <!--<MODULE NAME="MetricStream Signed Properties">-->
+  <!--<SYSTEM>-->
+   <!--<PROPERTIES>-->
+<ENTERPRISE NAME="MetricStream">
+         <PROPERTY NAME="LICENSEE">msi</PROPERTY>
+         <PROPERTY NAME="MAX_USERS">9999</PROPERTY>
+         <PROPERTY NAME="MAX_CONCURRENT_USERS">999</PROPERTY>
+         <PROPERTY NAME="CONCURRENT_USERS_OVERFLOW">10</PROPERTY>
+         <PROPERTY NAME="MAX_METRICS">9999</PROPERTY>
+         <PROPERTY NAME="EXPIRATION">Sat, 02-Feb-2047 07:22:56 GMT</PROPERTY>
+         <PROPERTY NAME="MULTIPLE_LOGIN">yes</PROPERTY>
+         <SIGNATURE NAME="MetricSign" ISSUER="MetricStream, Inc." METHOD="DSA-1" PUBLIC_KEY="file://localhost/&key_root;/keys/MetricStream_key.pub">302d021500889b0894e99d7c9af9b97a440a44b77491af04e8021466612fa51de86d7e039101b4ddb14ab2f7bad18e
+         </SIGNATURE>
+ </ENTERPRISE> 
+    <!--</PROPERTIES>-->
+   <!--</SYSTEM>-->
+ <!--</MODULE>-->
