@@ -116,24 +116,24 @@ spec:
               key: TOMCAT_JAVA_XMX
         - name: CLASSPATH
           value: "/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar"
-        readinessProbe:
-          httpGet:
-            path: /ui
-            port: tomcat-port
-          failureThreshold: 10
-          initialDelaySeconds: 5
-          periodSeconds: 15
-          successThreshold: 1
-          timeoutSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /ui
-            port: tomcat-port
-          failureThreshold: 10
-          initialDelaySeconds: 300
-          periodSeconds: 20
-          successThreshold: 1
-          timeoutSeconds: 10
+#        readinessProbe:
+#          httpGet:
+#            path: /ui
+#           port: tomcat-port
+#         failureThreshold: 10
+#          initialDelaySeconds: 5
+#          periodSeconds: 15
+#          successThreshold: 1
+#          timeoutSeconds: 10
+#        livenessProbe:
+#          httpGet:
+#            path: /ui
+#            port: tomcat-port
+#          failureThreshold: 10
+#          initialDelaySeconds: 300
+#          periodSeconds: 20
+#          successThreshold: 1
+#          timeoutSeconds: 10
         ports:
         - name: tomcat-port
           containerPort: 8080
