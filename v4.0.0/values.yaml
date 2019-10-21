@@ -27,13 +27,13 @@ resourceUnit:
         TOMCAT: 250
     memory:
       max:
-        ORACLE: 9216
-        TOMCAT: 4096
-        ACTIVEMQ: 1024
-        ELASTICSEARCH: 2048
-        MONGO: 2048
-        DATAROUTER: 1024
-        LIBREOFFICE: 1024
+        ORACLE: 57344
+        TOMCAT: 28672
+        ACTIVEMQ: 5120
+        ELASTICSEARCH: 5120
+        MONGO: 5120
+        DATAROUTER: 5120
+        LIBREOFFICE: 5120
     cpu:
       max:
         ORACLE: 15000

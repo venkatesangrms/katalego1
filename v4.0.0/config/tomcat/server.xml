@@ -9,7 +9,8 @@
                    protocol="HTTP/1.1"
                    connectionTimeout="20000"
                    maxHttpHeaderSize="65536"
-                   secure="false" />
+                   secure="false" 
+                   maxThreads="600"  />
         <Engine name="Catalina"
                 defaultHost="localhost"
                 jvmRoute="worker1">
@@ -26,7 +27,7 @@
                 </Context>
                 <Context path="/si_image" docBase="/opt/metricstream/SYSTEMi/Systemi/Resource/images" />
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" 
-                   prefix="localhost_access_log" suffix=".txt" pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+                   prefix="localhost_access_log" suffix=".txt" pattern="%h %l %u %t &quot;%r&quot; %s %b %D" />
             </Host>
         </Engine>
     </Service>

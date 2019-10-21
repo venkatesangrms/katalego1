@@ -965,12 +965,16 @@
         <PROPERTIES>
           <PROPERTY NAME="Server">yes</PROPERTY>
           <PROPERTY NAME="AgentHostPort">&sqlagentport;</PROPERTY>
+          <PROPERTY NAME="MAXTHREADS">0</PROPERTY>
+          <PROPERTY NAME="BACK_LOG">100</PROPERTY>
         </PROPERTIES>
       </COMPONENT>
       <COMPONENT CLASS="com.metricstream.systemi.server.channel.HTTPImpl" NAME="Non SQL channel Server" ORDER="170">
         <PROPERTIES>
           <PROPERTY NAME="Server">yes</PROPERTY>
           <PROPERTY NAME="AgentHostPort">&nonsqlagentport;</PROPERTY>
+          <PROPERTY NAME="MAXTHREADS">0</PROPERTY>
+          <PROPERTY NAME="BACK_LOG">100</PROPERTY>
         </PROPERTIES>
       </COMPONENT>
       <COMPONENT CLASS="com.metricstream.systemi.server.agent.Manager" NAME="Sql App Agent" ORDER="210">
