@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MODULE SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/Doc/Module.dtd" [
   <!ENTITY license SYSTEM "file://localhost//opt/metricstream/SYSTEMi/Systemi/keys/MetricStream_license.xml">
-  <!ENTITY hostname "vmidoctest13">
+  <!ENTITY hostname "3.231.216.225">
   <!ENTITY webserverport "30001">
   <!ENTITY workflowhostname "127.0.0.1">
   <!ENTITY webserviceport "8268">
@@ -143,7 +143,7 @@
       <!--  End DB related items -->
       <INSTANCE>
         <PROPERTY NAME="DBURL">jdbc/oracle/msi</PROPERTY>
-        <PROPERTY NAME="DBUSER">METRICSTREAM</PROPERTY>
+        <PROPERTY NAME="DBUSER">GRC7SP4</PROPERTY>
       </INSTANCE>
       <!--  Begin Log related items -->
       <PROPERTY NAME="LOGFILE">&systemi_root;/Systemi/log/client_${METRICSTREAM.PROPERTY.NODE_ID}_{0,date,MMM-dd-yy-HH-mm-ss}</PROPERTY>
