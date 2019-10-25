@@ -5,12 +5,24 @@
     <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
     <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
     <Service name="Catalina">
+
+    <!--
         <Connector port="8080"
                    protocol="HTTP/1.1"
                    connectionTimeout="20000"
                    maxHttpHeaderSize="65536"
                    secure="false" 
                    maxThreads="600"  />
+    -->
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="600" SSLEnabled="true" scheme="https" secure="true">
+        <SSLHostConfig>
+            <Certificate certificateKeystoreFile=" /usr/local/tomcat/ssl-certs/metricstream.p12"
+                         certificateKeystorePassword="changeit"
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
+
         <Engine name="Catalina"
                 defaultHost="localhost"
                 jvmRoute="worker1">
