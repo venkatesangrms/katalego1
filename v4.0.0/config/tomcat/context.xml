@@ -26,4 +26,4 @@
     <!--
     <Manager pathname="" />
     -->
-<Resource auth="Container" connectionInitSql="select 1 from dual" driverClassName="oracle.jdbc.OracleDriver" factory="com.metricstream.util.KMSEncryptedDataSourceFactory" idleTimeout="60000" jdbcUrl="jdbc:oracle:thin:@oracle-service:1521:orcl" leakDetectionThreshold="300000" maximumPoolSize="2000" minimumIdle="100" name="jdbc/oracle/msi" password="2+OVcWVp6ZptgCZvLKnOvQ==" type="javax.sql.DataSource" username="GRC7SP4"/></Context>
+<Resource auth="Container" connectionInitSql="select 1 from dual" driverClassName="oracle.jdbc.OracleDriver" factory="com.metricstream.util.KMSEncryptedDataSourceFactory" idleTimeout="60000" jdbcUrl="jdbc:oracle:thin:@oracle-service:1521:orcl" leakDetectionThreshold="300000" maximumPoolSize="2000" minimumIdle="100" name="jdbc/oracle/msi" password="2+OVcWVp6ZptgCZvLKnOvQ==" type="javax.sql.DataSource" username="METRICSTREAM"/></Context>
