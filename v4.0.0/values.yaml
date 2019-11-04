@@ -27,7 +27,7 @@ resourceUnit:
         TOMCAT: 250
     memory:
       max:
-        ORACLE: 28672
+        ORACLE: 79872
         TOMCAT: 28672
         ACTIVEMQ: 10240
         ELASTICSEARCH: 10240
