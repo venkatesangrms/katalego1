@@ -131,7 +131,7 @@ spec:
           value: "/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar"
         readinessProbe:
           httpGet:
-            path: /ui
+           path: /ui
            port: tomcat-port
          failureThreshold: 10
           initialDelaySeconds: 5
