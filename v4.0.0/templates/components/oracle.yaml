@@ -139,10 +139,10 @@ spec:
         {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
         resources:
           limits:
-#            memory: {{ .memory.max.ORACLE }}Mi
+            memory: {{ .memory.max.ORACLE }}Mi
             cpu: {{ .cpu.max.ORACLE }}m
           requests:
-#            memory: {{ .memory.max.ORACLE }}Mi
+            memory: {{ .memory.max.ORACLE }}Mi
             cpu: {{ .cpu.max.ORACLE }}m
         {{- end }}
         volumeMounts:

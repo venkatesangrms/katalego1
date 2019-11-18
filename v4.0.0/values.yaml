@@ -36,7 +36,7 @@ resourceUnit:
         LIBREOFFICE: 10240
     cpu:
       max:
-        ORACLE: 15000
+        ORACLE: 30000
         TOMCAT: 8000
         ACTIVEMQ: 250
         ELASTICSEARCH: 500
@@ -99,14 +99,14 @@ resourceUnit:
     storage:
       size:
         ACTIVEMQ: 100
-        ELASTICSEARCH: 500
-        MONGO: 395
-        ORACLE: 1500
-        TOMCAT: 1500
+        ELASTICSEARCH: 100
+        MONGO: 100
+        ORACLE: 950
+        TOMCAT: 250
     memory:
       max:
-        ORACLE: 49152
-        TOMCAT: 36864
+        ORACLE: 77824
+        TOMCAT: 32768
         ACTIVEMQ: 8192
         ELASTICSEARCH: 16384
         MONGO: 8192
@@ -114,8 +114,8 @@ resourceUnit:
         LIBREOFFICE: 4096
     cpu:
       max:
-        ORACLE: 12000
-        TOMCAT: 8000
+        ORACLE: 36000
+        TOMCAT: 10000
         ACTIVEMQ: 2000
         ELASTICSEARCH: 4000
         MONGO: 2000

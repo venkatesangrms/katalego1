@@ -46,15 +46,15 @@ spec:
               name: resource-unit-configmap
               key: DATAROUTER_JAVA_XMX
         imagePullPolicy: Always
-#        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
-#        resources:
-#          limits:
-#            memory: {{ .memory.max.DATAROUTER }}Mi
-#            cpu: {{ .cpu.max.DATAROUTER }}m
-#          requests:
-#            memory: {{ .memory.max.DATAROUTER }}Mi
-#            cpu: {{ .cpu.max.DATAROUTER }}m
-#        {{- end }}
+        {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
+        resources:
+          limits:
+            memory: {{ .memory.max.DATAROUTER }}Mi
+            cpu: {{ .cpu.max.DATAROUTER }}m
+          requests:
+            memory: {{ .memory.max.DATAROUTER }}Mi
+            cpu: {{ .cpu.max.DATAROUTER }}m
+        {{- end }}
         volumeMounts:
         - mountPath: /opt/datarouter/datarouter.properties
           name: datarouter-configuration-configmap-volume
