@@ -121,3 +121,30 @@ resourceUnit:
         MONGO: 2000
         DATAROUTER: 2000
         LIBREOFFICE: 2000
+  plab:
+    storage:
+      size:
+        ACTIVEMQ: 100
+        ELASTICSEARCH: 100
+        MONGO: 100
+        ORACLE: 950
+        TOMCAT: 250
+    memory:
+      max:
+        ORACLE: 77824
+        TOMCAT: 24576
+        ACTIVEMQ: 2048
+        ELASTICSEARCH: 2048
+        MONGO: 4096
+        DATAROUTER: 2048
+        LIBREOFFICE: 2048
+    cpu:
+      max:
+        ORACLE: 32000
+        TOMCAT: 12000
+        ACTIVEMQ: 2000
+        ELASTICSEARCH: 2000
+        MONGO: 2000
+        DATAROUTER: 2000
+        LIBREOFFICE: 2000
+
