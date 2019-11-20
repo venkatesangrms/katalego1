@@ -28,6 +28,7 @@ questions:
       Medium -> 8 CPU Core & 32 GB RAM
       Large -> 16 CPU Core & 64 GB RAM
       Xlarge (eXtra Large) -> 32 CPU Core & 128 GB RAM
+      Plab -> 40 CPU core & 160 GB RAM
   type: enum
   group: Resource Unit
   options:
@@ -35,6 +36,7 @@ questions:
     - medium
     - large
     - xlarge
+    - plab
   label: Select Resource Unit Size?
   required: true
 - variable: imageCredentials.registry
