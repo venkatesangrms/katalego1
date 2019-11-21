@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: oracle-deployment
+  name: oracle-backup-deployment
 spec:
   replicas: 0
   selector:
     matchLabels:
-      app: oracle
+      app: oracle-backup
   template:
     metadata:
-      name: oracle
+      name: oracle-backup
       labels:
-        app: oracle
+        app: oracle-backup
         tier: persistent-tier
-        container_name: oracle
+        container_name: oracle-backup
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
       serviceAccountName: common-service-account
@@ -22,7 +22,7 @@ spec:
         persistentVolumeClaim:
           claimName: oracle-persistent-volume-claim
       containers:
-      - name: oracle-container
+      - name: oracle-backup-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.RI_DATA_INIT_BACKUP }}
         imagePullPolicy: Always
         volumeMounts:
