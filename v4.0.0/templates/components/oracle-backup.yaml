@@ -26,7 +26,7 @@ spec:
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.RI_DATA_INIT_BACKUP }}
         imagePullPolicy: Always
         volumeMounts:
-        - mountPath: /data/oracle
+        - mountPath: /data/oracle/oradata
           name: oracle-data-volume
           subPath: oradata
         env: 
