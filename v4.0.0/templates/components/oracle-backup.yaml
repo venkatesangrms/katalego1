@@ -29,6 +29,9 @@ spec:
         - mountPath: /data/oracle/oradata
           name: oracle-data-volume
           subPath: oradata
+        securityContext:
+          runAsUser: 54321
+          readOnlyRootFilesystem: true
         env: 
         - name: AWS_DEFAULT_REGION
           value: {{ .Values.aws.region }}
