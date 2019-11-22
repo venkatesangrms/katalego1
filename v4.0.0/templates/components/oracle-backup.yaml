@@ -41,3 +41,8 @@ spec:
           value: {{ .Values.aws.secret.access.key }}
       imagePullSecrets:
       - name: container-registry-key-secret
+      securityContext:
+        runAsNonRoot: false
+        fsGroup: 54321
+      allowedCapabilities: null
+
