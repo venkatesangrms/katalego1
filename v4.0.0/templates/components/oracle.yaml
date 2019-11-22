@@ -44,7 +44,7 @@ kind: Deployment
 metadata:
   name: oracle-deployment
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: oracle
