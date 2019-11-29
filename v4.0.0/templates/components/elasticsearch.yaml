@@ -20,7 +20,7 @@ kind: Deployment
 metadata:
   name: elasticsearch-deployment
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: elasticsearch
@@ -202,3 +202,5 @@ spec:
         runAsNonRoot: true
         fsGroup: 1000
       allowedCapabilities: null
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-64-138.ec2.internal

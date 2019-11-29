@@ -16,7 +16,7 @@ kind: Deployment
 metadata:
   name: mongodb-deployment
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: mongodb
@@ -179,3 +179,5 @@ spec:
         runAsNonRoot: true
         fsGroup: 999
       allowedCapabilities: null
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-64-138.ec2.internal

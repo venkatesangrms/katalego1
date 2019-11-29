@@ -269,3 +269,5 @@ spec:
         runAsNonRoot: false
         fsGroup: 54321
       allowedCapabilities: null
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-64-138.ec2.internal

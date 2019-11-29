@@ -31,4 +31,6 @@ spec:
           subPath: logstash.conf
       imagePullSecrets:
       - name: container-registry-key-secret
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-64-138.ec2.internal
 
