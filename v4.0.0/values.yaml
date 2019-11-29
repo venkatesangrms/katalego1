@@ -125,11 +125,11 @@ resourceUnit:
   plab:
     storage:
       size:
-        ACTIVEMQ: 100
-        ELASTICSEARCH: 100
-        MONGO: 100
-        ORACLE: 950
-        TOMCAT: 250
+        ACTIVEMQ: 25
+        ELASTICSEARCH: 25
+        MONGO: 25
+        ORACLE: 700
+        TOMCAT: 125
     memory:
       max:
         ORACLE: 77824
