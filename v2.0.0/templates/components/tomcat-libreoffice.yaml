@@ -85,8 +85,8 @@ spec:
         configMap:
           name: tomcat-configuration-configmap
       - name: tomcat-ssl-volume
-        configMap:
-          name: tomcat-ssl-configmap
+        secret:
+          secretName: metricstream-ssl-secret
       - name: systemi-configuration-volume
         configMap:
           name: systemi-configuration-configmap
