@@ -11,6 +11,34 @@ spec:
   selector:
     app: oracle
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oracle-nodeport-service
+spec:
+  ports:
+    - name: oracle-nodeport-service-port
+      protocol: TCP
+      port: 1521
+      nodePort: 30000
+  selector:
+    app: oracle
+  type: NodePort
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oracle-nodeport-ssh-service
+spec:
+  ports:
+    - name: oracle-nodeport-ssh-service-port
+      protocol: TCP
+      port: 22
+      nodePort: 30112
+  selector:
+    app: oracle
+  type: NodePort
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -29,6 +57,15 @@ spec:
         container_name: oracle
         environment: {{ .Values.label.ENVIRONMENT }}
     spec:
+#      affinity:
+#        nodeAffinity:
+#          requiredDuringSchedulingIgnoredDuringExecution:
+#            nodeSelectorTerms:
+#            - matchExpressions:
+#              - key: kubernetes.io/hostname
+#                operator: In
+#                values:
+#                - ip-192-168-66-164
       serviceAccountName: common-service-account
       volumes: 
       - name: oracle-data-volume
@@ -37,14 +74,13 @@ spec:
       - name: oracle-dshm-volume
         emptyDir:
           medium: Memory
-          sizeLimit: "6144Mi"
       - name: oracle-fluentd-config-volume
         configMap:
           name: oracle-fluentd-configmap
       containers:
       - name: oracle-container
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.ORACLE }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         env:
         - name: ORACLE_MAX_MEM
           valueFrom:
@@ -98,6 +134,8 @@ spec:
         ports:
         - name: oracle-port
           containerPort: 1521
+        - name: oracle-ssh-port
+          containerPort: 22
         {{- with ( pluck .Values.resourceUnit.size .Values.resourceUnit | first ) }}
         resources:
           limits:
@@ -214,7 +252,7 @@ spec:
         image: {{required "Image Info is mandatory! Read the Project Documentation to understand what and where to configure." .Values.image.RI_DATA_INIT }} 
         env: 
         - name: MI_VERSION
-          value: 7.19.6
+          value: 7.19.6.2
         - name: AWS_DEFAULT_REGION
           value: {{ .Values.aws.region }}
         - name: AWS_ACCESS_KEY_ID
@@ -231,3 +269,5 @@ spec:
         runAsNonRoot: false
         fsGroup: 54321
       allowedCapabilities: null
+      nodeSelector:
+        kubernetes.io/hostname: ip-192-168-64-138.ec2.internal
