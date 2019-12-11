@@ -84,6 +84,9 @@ spec:
       - name: tomcat-configuration-volume
         configMap:
           name: tomcat-configuration-configmap
+      - name: tomcat-ssl-volume
+        configMap:
+          name: tomcat-ssl-configmap
       - name: systemi-configuration-volume
         configMap:
           name: systemi-configuration-configmap
@@ -176,6 +179,8 @@ spec:
           subPath: ms_data
         - mountPath: /usr/local/tomcat/conf
           name: tomcat-configuration-volume
+        - mountPath: /usr/local/tomcat/ssl-certs
+          name: tomcat-ssl-volume
         - mountPath: /usr/local/tomcat/logs
           name: tomcat-data-volume
           subPath: logs
