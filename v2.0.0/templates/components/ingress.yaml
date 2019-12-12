@@ -8,5 +8,5 @@ spec:
     https:
       paths:
       - backend:
-          serviceName: tomcat-service
+          serviceName: tomcat-ssl-service
           servicePort: 443
