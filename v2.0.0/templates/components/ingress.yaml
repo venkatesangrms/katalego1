@@ -5,8 +5,8 @@ metadata:
 spec:
   rules:
   - host: {{ .Release.Namespace }}.k8s.metricstream.com
-    http:
+    https:
       paths:
       - backend:
           serviceName: tomcat-service
-          servicePort: 80
+          servicePort: 443
