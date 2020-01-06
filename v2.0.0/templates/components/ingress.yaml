@@ -2,6 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: application-ingress
+  annotations:
+    nginx.org/ssl-services: "kubernetes-dashboard"
+    ingress.kubernetes.io/ssl-passthrough: "true"
+    nginx.ingress.kubernetes.io/secure-backends: "true"
 spec:
   rules:
   - host: {{ .Release.Namespace }}.k8s.metricstream.com
