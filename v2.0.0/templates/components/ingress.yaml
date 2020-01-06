@@ -5,7 +5,7 @@ metadata:
 spec:
   rules:
   - host: {{ .Release.Namespace }}.k8s.metricstream.com
-    https:
+    http:
       paths:
       - backend:
           serviceName: tomcat-ssl-service
