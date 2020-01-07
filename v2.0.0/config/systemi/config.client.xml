@@ -28,7 +28,7 @@
   <!ENTITY dctm_user "">
   <!ENTITY dctm_pass "">
   <!ENTITY dctm_doc_type "">
-  <!ENTITY secure "s">
+  <!ENTITY secure "">
   <!ENTITY jndi_orb_wrapper "yes">
   <!ENTITY custom_conn_pool "com.metricstream.systemi.server.dspool.ConnectionPoolImpl(ignore_credentials=yes)">
   <!ENTITY datasource_prfx "java:comp/env/">
