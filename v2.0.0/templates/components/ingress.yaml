@@ -12,5 +12,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: tomcat-ssl-service
-          servicePort: 443
+          serviceName: tomcat-service
+          servicePort: 80
